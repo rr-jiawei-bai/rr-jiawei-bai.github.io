@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="ocEyzgQixcMwLGcR5yegd7v1cTQsH0TV3h4JLlokIIs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个小白的日常记录">
+    <meta name="keywords" content="小白">
+    <meta name="theme-color" content="#000000">
+
+    <title>DevOps中的CI - jiawei's blog</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="//img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jasonbai97.com//2024/05/03/CI_in_DevOps/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="//css/blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="//css/syntax.css">
+
+    
+
+    <!-- top processbar -->
+    <link rel="preload" href="//css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="//css/style.css" rel="stylesheet"></noscript>
+
+    <link href="//css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="//">Jwb's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="blog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+
+                    <li>
+                        <a href="//">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="//tags/">Tags</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="//about/">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#blog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: 
+        /* url('/img/in-post/CICD/devops.png'); */
+        url('//img/in-post/CICD/devops.png')
+    }
+    
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="//tags/#DevOps" title="DevOps">DevOps</a>
+                        
+                        <a class="tag" href="//tags/#CI/CD" title="CI/CD">CI/CD</a>
+                        
+                    </div>
+                    <h1>DevOps中的CI</h1>
+                    
+                    
+                    <h2 class="subheading">DevOps，CI</h2>
+                    
+                    <span id="busuanzi_container_page_pv">Views:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;times</span>
+                    
+                    <span class="meta">Posted by Jiawei Bai on May 3, 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h1 id="devops">DevOps</h1>
+
+<h2 id="软件开发过程设计工具">软件开发过程&amp;设计工具</h2>
+
+<p><img src="/site/img/in-post/CICD/devops.png" alt="image-20240502231443039" /></p>
+
+<h3 id="cicd持续集成和持续部署过程学习">CI/CD(持续集成和持续部署过程学习)</h3>
+
+<p><img src="/site/img/in-post/CICD/image-20240502220404765.png" alt="image-20240502220404765" style="zoom: 50%;" /></p>
+
+<h3 id="code阶段服务器01安装gitlab19216811101">CODE阶段—&gt;服务器01安装Gitlab（192.168.11.101）</h3>
+
+<p>利用docker环境：先安装Docker 和 Docker-Compose</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 服务器01安装Gitlab</span>
+docker version
+docker-compose version
+systemctl stop firewalld <span class="c"># 关闭防火墙</span>
+<span class="nb">mkdir </span>docker <span class="o">&amp;&amp;</span> <span class="nb">cd </span>docker  <span class="c"># /usr/local/docker</span>
+<span class="nb">mkdir </span>gitlab_docker <span class="o">&amp;&amp;</span> <span class="nb">cd </span>gitlab_docker
+<span class="nb">touch </span>docker-compose.yml
+docker search gitlab <span class="c"># 查询gitlab的docker镜像</span>
+docker pull gitlab:latest <span class="c"># 下载</span>
+docker images <span class="c"># 确认下载的gitlab</span>
+nano docker-compose.yml <span class="c"># 编辑 如下</span>
+
+systemctl restart docker
+docker-compose logs <span class="nt">-f</span> <span class="c"># 可通过浏览器访问192.168.11.101:8929查看gitlab</span>
+</code></pre></div></div>
+
+<p>编辑docker-compose.yml文件，设置为docker启动就会让gitlab启动</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1'</span>
+<span class="na">services</span><span class="pi">:</span>
+ <span class="na">gitlab</span><span class="pi">:</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">gitlab-image'</span>  <span class="c1"># 镜像名称</span>
+  <span class="na">container-name</span><span class="pi">:</span> <span class="s">gitlab</span> <span class="c1"># 容器名称</span>
+  <span class="na">restart</span><span class="pi">:</span> <span class="s">always</span>    <span class="c1"># 随着docker启动而启动</span>
+  <span class="na">environment</span><span class="pi">:</span>
+   <span class="na">GITLAB_OMNIBUS_CONFIG</span><span class="pi">:</span>
+    <span class="s">external_url 'http://192.168.11.101:8929'</span> <span class="c1"># 当前宿主机ip</span>
+    <span class="s">gitlab_rails['gitlab_shell_ssh_port']=2224</span>
+  <span class="na">ports</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">8989:8989'</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">2224:2224'</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">./config:/etc/gitlab'</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">./logs:/var/log/gitlab'</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">./data:/var/opt/gitlab'</span>
+</code></pre></div></div>
+
+<p>进入docker中的gitlab镜像编辑：</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> gitlab bash
+<span class="nb">cat</span> /etc/gitlab/initial_root_password <span class="c">#找到gitlab密码，在浏览器中修改</span>
+<span class="c"># 在gitlab中创建新仓库，用于开发推送</span>
+</code></pre></div></div>
+
+<h3 id="build阶段服务器02安装mavenjdk19216811102">BUILD阶段—&gt;服务器02安装Maven，JDK（192.168.11.102）</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tip 修改虚拟机ip地址 超级模式下：</span>
+nano /etc/sysconfig/network-scripts/ifcfg-ens33
+systemctl restart network
+</code></pre></div></div>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装maven 安装jdk8</span>
+<span class="nb">tar</span> <span class="nt">-zxvf</span> maven <span class="nt">-C</span> /usr/local
+<span class="nb">tar</span> <span class="nt">-zxvf</span> jdk8 <span class="nt">-C</span> /usr/local
+<span class="nb">cd </span>maven <span class="o">&amp;&amp;</span> nano conf/settings.xml <span class="c"># 设置maven 的阿里云镜像</span>
+<span class="c"># maven默认使用jdk1.8版本</span>
+</code></pre></div></div>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">&lt;profile&gt;</span>
+ <span class="s">&lt;id&gt;jdk8&lt;/id&gt;</span>
+ <span class="s">&lt;activation&gt;</span>
+  <span class="s">&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span>
+  <span class="s">&lt;jdk&gt;1.8&lt;/jdk&gt;</span>
+ <span class="s">&lt;/activation&gt;</span>
+ <span class="s">&lt;properties&gt;</span>
+  <span class="s">&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span>
+  <span class="s">&lt;maven.compiler,target&gt;1.8&lt;/maven.compiler.target&gt;</span>
+  <span class="s">&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span>
+ <span class="s">&lt;/properties&gt;</span>
+<span class="s">&lt;/profile&gt;</span>
+</code></pre></div></div>
+
+<h3 id="operate阶段服务器02安装docker">OPERATE阶段—&gt;服务器02安装Docker</h3>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装Docker</span>
+docker <span class="nb">install</span> <span class="c"># 各种方法</span>
+<span class="nb">chmod</span> +x docker-compose <span class="c"># 同时也要安装并赋予可执行</span>
+<span class="nb">echo</span> <span class="nv">$PATH</span> <span class="o">&amp;&amp;</span> <span class="nb">mv </span>docker-compose /usr/bin <span class="c"># 添加环境变量</span>
+systemctl start docker <span class="c"># 启动</span>
+systemctl <span class="nb">enable </span>docker <span class="c"># 开机自启动</span>
+docker version <span class="c"># 确定安装成功</span>
+docker-cmopose version
+</code></pre></div></div>
+
+<h3 id="integrate阶段服务器02安装jenkins">INTEGRATE阶段—&gt;服务器02安装Jenkins</h3>
+
+<p><img src="/site/img/in-post/CICD/image-20240502225544686.png" alt="image-20240502225544686" style="zoom: 50%;" /></p>
+
+<p><strong>CI可以理解为：Jenkins将代码拉取、构建、制作镜像交给测试人员测试。</strong>
+<strong>持续集成：将代码持续的集成到主干上，并自动构建和测试</strong></p>
+
+<p><strong>CD可以理解为：通过Jenkins将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。</strong>
+<strong>持续交付：让经过持续集成的代码可以进行手动部署。</strong>
+<strong>持续部署：让可以持续交付的代码随时随地的自动化部署</strong></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装Jenkins</span>
+docker pull jenkins/jenkins
+<span class="nb">cd</span> /usr/local <span class="o">&amp;&amp;</span> <span class="nb">mkdir </span>docker
+<span class="nb">cd </span>docker <span class="o">&amp;&amp;</span> <span class="nb">mkdir </span>jenkins_docker
+<span class="nb">touch </span>docker-compose.yml <span class="c"># jenkins相关</span>
+docker-compose up <span class="nt">-d</span>
+<span class="nb">chmod</span> <span class="nt">-R</span> 777 data <span class="c"># 给docker权限</span>
+docker-compose restart
+docker logs <span class="nt">-f</span> jenkins <span class="c"># 获取密码</span>
+<span class="c"># 访问jenkins首页 192.168.11.102：8080并设置，下载插件</span>
+<span class="c"># Git parameter &amp; Publish over SSH</span>
+</code></pre></div></div>
+
+<p>编辑docker-compose.yml</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1'</span>
+<span class="na">services</span><span class="pi">:</span>
+ <span class="na">jenkins</span><span class="pi">:</span>
+  <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">jenkins/jenkins:version-number'</span>  <span class="c1"># 镜像名称</span>
+  <span class="na">container-name</span><span class="pi">:</span> <span class="s">jenkins</span> <span class="c1"># 容器名称</span>
+  <span class="na">ports</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">8080:8080'</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">50000:50000'</span>
+  <span class="na">volumes</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s1">'</span><span class="s">./data/:/var/jenkins_home/'</span> <span class="c1"># 前面是宿主机，后面是镜像中项目和插件的位置</span>
+</code></pre></div></div>
+
+<p>将jdk和maven移动到jenkins的data目录下</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /usr/local/docker/jenkins_docker/data
+<span class="nb">mv</span> /usr/local/jdk/ ./
+<span class="nb">mv</span> /usr/local/maven/ ./
+<span class="c"># 在容器中制定jdk和maven，可以在浏览器中全局设置中设置</span>
+</code></pre></div></div>
+
+<p>在浏览器中全局设置中设置
+<img src="/site/img/in-post/CICD/image-20240502231938967.png" alt="image-20240502231938967" style="zoom: 50%;" /><img src="/site/img/in-post/CICD/image-20240502232009886.png" alt="image-20240502232009886" style="zoom:50%;" /></p>
+
+<p>在浏览器中系统设置中设置，发布地址</p>
+
+<p><img src="/site/img/in-post/CICD/image-20240502232213345.png" alt="image-20240502232213345" style="zoom:50%;" /></p>
+
+<h3 id="ci过程">CI过程</h3>
+
+<h4 id="创建git仓库并推送代码">创建git仓库并推送代码</h4>
+
+<h4 id="通过freestyle-project设置jenkins">通过Freestyle Project设置Jenkins</h4>
+
+<p><img src="/site/img/in-post/CICD/image-20240502234148371.png" alt="image-20240502234148371" style="zoom: 33%;" /></p>
+
+<h4 id="build-now">Build now</h4>
+
+<p>拉取到jenkins</p>
+
+<h4 id="configure">Configure</h4>
+
+<h5 id="build">Build</h5>
+
+<h5 id="add-build-step-invoke-top-level-maven-targets">Add build step: Invoke top-level Maven targets</h5>
+
+<p><img src="/site/img/in-post/CICD/image-20240502234509415.png" alt="image-20240502234509415" style="zoom:50%;" /></p>
+
+<h5 id="post-build-actions">Post-build-actions</h5>
+
+<p><img src="/site/img/in-post/CICD/image-20240502234826480.png" alt="image-20240502234826480" style="zoom:50%;" /><img src="/site/img/in-post/CICD/image-20240502234714055.png" alt="image-20240502234714055" style="zoom: 33%;" /></p>
+
+<h5 id="构建docker镜像">构建docker镜像</h5>
+
+<p><img src="/site/img/in-post/CICD/image-20240502235646353.png" alt="image-20240502235646353" style="zoom:50%;" /></p>
+
+<h5 id="构建docker-yml文件">构建docker yml文件</h5>
+
+<p><img src="/site/img/in-post/CICD/image-20240503000622131.png" alt="image-20240503000622131" style="zoom:50%;" /></p>
+
+<h4 id="jenkins拉取文件汇总">jenkins拉取文件汇总</h4>
+
+<p><img src="/site/img/in-post/CICD/image-20240502235929210.png" alt="image-20240502235929210" style="zoom: 67%;" /></p>
+
+<h4 id="自动构建后执行">自动构建后执行</h4>
+
+<p><img src="/site/img/in-post/CICD/image.jpeg" alt="image-20240503000356685" style="zoom:50%;" /></p>
+
+<h4 id="查看效果">查看效果</h4>
+
+<p><img src="/site/img/in-post/CICD/image-20240503000701444.png" alt="image-20240503000701444" /></p>
+
+<h3 id="cd过程">CD过程</h3>
+
+<p>通过Git parameter 根据tag进行拉取</p>
+
+<p><img src="/site/img/in-post/CICD/image-20240503001605031.png" alt="image-20240503001605031" style="zoom:50%;" /></p>
+
+<p>根据tag进行检查</p>
+
+<p><img src="/site/img/in-post/CICD/image-20240503001643591.png" alt="image-20240503001643591" style="zoom:50%;" /></p>
+
+<h3 id="sonarqube">SonarQube</h3>
+
+<h3 id="harbor">Harbor</h3>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/2024/05/20/Leetcode/" data-toggle="tooltip" data-placement="top" title="刷题日常">
+                        Next<br>
+                        <span>刷题日常</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+                				<a href="/tags/#DevOps" title="DevOps" rel="1">
+                                    DevOps
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#CI/CD" title="CI/CD" rel="1">
+                                    CI/CD
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Leetcode" title="Leetcode" rel="1">
+                                    Leetcode
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Algorithm" title="Algorithm" rel="1">
+                                    Algorithm
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Life" title="Life" rel="1">
+                                    Life
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="https://egh0bww1.com/">YY-include</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- add support for mathjax -->
+
+
+<!-- add support for mermaid -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async('//js/anchor.min.js',function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+
+                <p class="copyright text-muted">
+                        <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="fix_site_pv"></span>次<span id="busuanzi_value_site_pv" style="display: none;"></span></span>
+                        <span id="busuanzi_container_site_uv">访客数<span id="fix_site_uv"></span>人<span id="busuanzi_value_site_uv" style="display: none;"></span></span>
+                        <br>
+                        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> -->
+                    <br>
+                    Copyright &copy; Jwb's Blog 2025
+                    <br>
+                    Theme by <a href="https://github.com/huxpro/huxpro.github.io">Hux</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- back-to-top -->
+<div id="back-top">
+    <a href="#section" data-toggle="tooltip" data-placement="top" title="top">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="//js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="//js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="//js/blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="//js/snackbar.js "></script>
+<script src="//js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('//js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async('//js/fastclick.min_4.js', function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- 不蒜子统计 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 运行时间统计 -->
+<!-- <script>
+    var now = new Date();
+    var getStatistics = false;
+    var changeDone = false;
+    function createtime() {
+        var grt= new Date("01/11/2015 20:01:26");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        // 补充统计
+        if(!getStatistics && ""!=document.getElementById("busuanzi_value_site_uv").innerHTML){getStatistics = true;}
+        if(getStatistics && !changeDone) {
+            site_pv = document.getElementById("busuanzi_value_site_pv").innerHTML;
+            site_uv = document.getElementById("busuanzi_value_site_uv").innerHTML;
+            site_pv_num = parseInt(site_pv,10) + 572573;
+            site_uv_num = parseInt(site_uv,10) + 490731;
+            document.getElementById("fix_site_pv").innerHTML = site_pv_num;
+            document.getElementById("fix_site_uv").innerHTML = site_uv_num;
+            changeDone = true;
+        }
+    }
+    createtime();
+    
+</script> -->
+
+<!-- back-top -->
+<script type="module">
+    $('#back-top').hide();
+    $(document).ready(function () {
+    $(window).scroll(function () {
+    if ($(this).scrollTop() > 250) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+    }
+    });
+    $('#back-top a').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+    });
+  });
+  </script>
+
+
+
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        // init
+        var P = $('div.post-container'), a, n, t, l, i, c;
+
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     */
+    async("//js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+</body>
+
+</html>

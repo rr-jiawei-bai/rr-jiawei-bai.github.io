@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="ocEyzgQixcMwLGcR5yegd7v1cTQsH0TV3h4JLlokIIs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个小白的日常记录">
+    <meta name="keywords" content="小白">
+    <meta name="theme-color" content="#000000">
+
+    <title>jiawei's blog</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="//img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jasonbai97.com//">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="//css/blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="//css/syntax.css">
+
+    
+
+    <!-- top processbar -->
+    <link rel="preload" href="//css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="//css/style.css" rel="stylesheet"></noscript>
+
+    <link href="//css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="//">Jwb's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="blog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+
+                    <li>
+                        <a href="//">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="//tags/">Tags</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="//about/">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#blog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('//img/bg-little-universe.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Jwb's Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">一个小白的日常</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</header>
+
+
+
+<!-- Main Content -->
+<div class="container">
+	<div class="row">
+        
+
+<!-- USE SIDEBAR -->
+    <!-- PostList Container -->
+    		<div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                postlist-container
+            ">
+    			<!--top article-->
+
+    
+        
+    
+        
+    
+        
+    
+
+
+
+<div class="post-preview">
+    <a href="//2024/06/10/Life/">
+        <h2 class="post-title">
+            2024年年中总结
+        </h2>
+        
+        <h3 class="post-subtitle">
+            记录生活
+        </h3>
+        
+        <div class="post-content-preview">
+            2024年年中总结
+
+转眼2024年已经过半，日本留学之旅也接近尾声。距离毕业也仅仅只剩下不到3个月，距离提交论文甚至还不到一个月。
+
+今晚突然从床上跳起来，想回顾一下这半年或者说这两年的历程。
+
+关于学习。
+
+从2022年9月来到日本以来，第一个半年，我努力学习所有的课程，虽然我仅仅选了12学分，同时还在这年12月考了个N2的等级证书。
+
+第二个半年，春暖花开，这年冬天我没回家，还记得大年...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted on June 10, 2024;&nbsp;Words:&nbsp;1798
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2024/05/20/Leetcode/">
+        <h2 class="post-title">
+            刷题日常
+        </h2>
+        
+        <h3 class="post-subtitle">
+            Leetcode
+        </h3>
+        
+        <div class="post-content-preview">
+            刷题日常
+
+数组
+
+关键词：二分查找，快慢指针（双指针），滑动窗口，螺旋矩阵（考察代码多于算法）
+
+我的想法：数组主要是对连续存储的“数字”变量进行操作，用指针可以提高一些效率。但是数组只能覆盖，不能直接删除，这是需要注意的点。
+
+二分查找
+
+704.二分查找
+
+给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted on May 20, 2024;&nbsp;Words:&nbsp;12542
+    </p>
+</div>
+<hr>
+
+<div class="post-preview">
+    <a href="//2024/05/03/CI_in_DevOps/">
+        <h2 class="post-title">
+            DevOps中的CI
+        </h2>
+        
+        <h3 class="post-subtitle">
+            DevOps，CI
+        </h3>
+        
+        <div class="post-content-preview">
+            DevOps
+
+软件开发过程&amp;设计工具
+
+
+
+CI/CD(持续集成和持续部署过程学习)
+
+
+
+CODE阶段—&gt;服务器01安装Gitlab（192.168.11.101）
+
+利用docker环境：先安装Docker 和 Docker-Compose
+
+# 服务器01安装Gitlab
+docker version
+docker-compose version
+systemctl s...
+        </div>
+    </a>
+    <p class="post-meta">
+        Posted on May 3, 2024;&nbsp;Words:&nbsp;1351
+    </p>
+</div>
+<hr>
+
+
+<!-- Pager -->
+
+
+    		</div>
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="//tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                            
+                                <a href="//tags/#DevOps" title="DevOps" rel="1">
+                                    DevOps
+                                </a>
+                            
+                        
+                            
+                                <a href="//tags/#CI/CD" title="CI/CD" rel="1">
+                                    CI/CD
+                                </a>
+                            
+                        
+                            
+                                <a href="//tags/#Leetcode" title="Leetcode" rel="1">
+                                    Leetcode
+                                </a>
+                            
+                        
+                            
+                                <a href="//tags/#Algorithm" title="Algorithm" rel="1">
+                                    Algorithm
+                                </a>
+                            
+                        
+                            
+                                <a href="//tags/#Life" title="Life" rel="1">
+                                    Life
+                                </a>
+                            
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="//about/">ABOUT ME</a></h5>
+                    <div class="short-about">
+                        
+                            <img src="//img/Wechat.jpeg" alt="Sidebar Avatar" />
+                            <!-- <img src="/img/Wechat.jpeg" /> -->
+                        
+                        
+                            <p>Yesterday you said tomorrow.</p>
+                        
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                        </ul>
+                    </div>
+                </section>
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="https://egh0bww1.com/">YY-include</a></li>
+                    
+                </ul>
+                
+    		</div>
+        
+	</div>
+</div>
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+
+                <p class="copyright text-muted">
+                        <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="fix_site_pv"></span>次<span id="busuanzi_value_site_pv" style="display: none;"></span></span>
+                        <span id="busuanzi_container_site_uv">访客数<span id="fix_site_uv"></span>人<span id="busuanzi_value_site_uv" style="display: none;"></span></span>
+                        <br>
+                        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> -->
+                    <br>
+                    Copyright &copy; Jwb's Blog 2025
+                    <br>
+                    Theme by <a href="https://github.com/huxpro/huxpro.github.io">Hux</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- back-to-top -->
+<div id="back-top">
+    <a href="#section" data-toggle="tooltip" data-placement="top" title="top">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="//js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="//js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="//js/blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="//js/snackbar.js "></script>
+<script src="//js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('//js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async('//js/fastclick.min_4.js', function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- 不蒜子统计 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 运行时间统计 -->
+<!-- <script>
+    var now = new Date();
+    var getStatistics = false;
+    var changeDone = false;
+    function createtime() {
+        var grt= new Date("01/11/2015 20:01:26");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        // 补充统计
+        if(!getStatistics && ""!=document.getElementById("busuanzi_value_site_uv").innerHTML){getStatistics = true;}
+        if(getStatistics && !changeDone) {
+            site_pv = document.getElementById("busuanzi_value_site_pv").innerHTML;
+            site_uv = document.getElementById("busuanzi_value_site_uv").innerHTML;
+            site_pv_num = parseInt(site_pv,10) + 572573;
+            site_uv_num = parseInt(site_uv,10) + 490731;
+            document.getElementById("fix_site_pv").innerHTML = site_pv_num;
+            document.getElementById("fix_site_uv").innerHTML = site_uv_num;
+            changeDone = true;
+        }
+    }
+    createtime();
+    
+</script> -->
+
+<!-- back-top -->
+<script type="module">
+    $('#back-top').hide();
+    $(document).ready(function () {
+    $(window).scroll(function () {
+    if ($(this).scrollTop() > 250) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+    }
+    });
+    $('#back-top a').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+    });
+  });
+  </script>
+
+
+
+
+
+
+
+<!-- Side Catalog -->
+
+
+
+</body>
+
+</html>

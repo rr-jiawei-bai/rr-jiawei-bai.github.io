@@ -1,0 +1,1855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="ocEyzgQixcMwLGcR5yegd7v1cTQsH0TV3h4JLlokIIs" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个小白的日常记录">
+    <meta name="keywords" content="小白">
+    <meta name="theme-color" content="#000000">
+
+    <title>刷题日常 - jiawei's blog</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="//img/favicon.ico">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jasonbai97.com//2024/05/20/Leetcode/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="//css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="//css/blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="//css/syntax.css">
+
+    
+
+    <!-- top processbar -->
+    <link rel="preload" href="//css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="//css/style.css" rel="stylesheet"></noscript>
+
+    <link href="//css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.0/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="//">Jwb's Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="blog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    
+
+                    <li>
+                        <a href="//">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="//tags/">Tags</a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a href="//about/">About</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#blog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        position: relative;
+        background-image: 
+        /* url('/img/in-post/Leetcode/Leetcode.png'); */
+        url('//img/in-post/Leetcode/Leetcode.png')
+    }
+    
+    
+</style>
+<header class="intro-header" >
+    <div class="header-mask"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="//tags/#Leetcode" title="Leetcode">Leetcode</a>
+                        
+                        <a class="tag" href="//tags/#Algorithm" title="Algorithm">Algorithm</a>
+                        
+                    </div>
+                    <h1>刷题日常</h1>
+                    
+                    
+                    <h2 class="subheading">Leetcode</h2>
+                    
+                    <span id="busuanzi_container_page_pv">Views:&nbsp;<span id="busuanzi_value_page_pv"></span>&nbsp;times</span>
+                    
+                    <span class="meta">Posted by Jiawei Bai on May 20, 2024</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h1 id="刷题日常">刷题日常</h1>
+
+<h2 id="数组">数组</h2>
+
+<p>关键词：二分查找，快慢指针（双指针），滑动窗口，螺旋矩阵（考察代码多于算法）</p>
+
+<p>我的想法：数组主要是对连续存储的“数字”变量进行操作，用指针可以提高一些效率。但是数组只能覆盖，不能直接删除，这是需要注意的点。</p>
+
+<h3 id="二分查找">二分查找</h3>
+
+<p><a href="https://leetcode.cn/problems/binary-search/description/">704.二分查找</a></p>
+
+<p>给定一个 n 个元素有序的（升序）整型数组 nums 和一个目标值 target  ，写一个函数搜索 nums 中的 target，如果目标值存在返回下标，否则返回 -1。</p>
+
+<p>示例 1:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>输入: nums = [-1,0,3,5,9,12], target = 9     
+输出: 4       
+解释: 9 出现在 nums 中并且下标为 4     
+</code></pre></div></div>
+
+<p>示例 2:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>输入: nums = [-1,0,3,5,9,12], target = 2     
+输出: -1        
+解释: 2 不存在 nums 中因此返回 -1        
+</code></pre></div></div>
+
+<p>提示：</p>
+
+<ul>
+  <li>你可以假设 nums 中的所有元素是不重复的。</li>
+  <li>n 将在 [1, 10000]之间。</li>
+  <li>nums 的每个元素都将在 [-9999, 9999]之间。</li>
+</ul>
+
+<h4 id="思路">思路</h4>
+
+<p>有序。无重复。因此可以用二分查找。</p>
+
+<h4 id="c版本">C++版本</h4>
+
+<p>代码如下：（详细注释）</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C++版本 左闭右闭</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">search</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 定义target在左闭右闭的区间里，[left, right]</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 当left==right，区间[left, right]依然有效，所以用 &lt;=</span>
+            <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">((</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span><span class="c1">// 防止溢出 等同于(left + right)/2</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// target 在左区间，所以[left, middle - 1]</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// target 在右区间，所以[middle + 1, right]</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// nums[middle] == target</span>
+                <span class="k">return</span> <span class="n">middle</span><span class="p">;</span> <span class="c1">// 数组中找到目标值，直接返回下标</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// 未找到目标值</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度：O(log n)</li>
+  <li>空间复杂度：O(1)</li>
+</ul>
+
+<p>*复杂度复习：log n主要是因为它每次操作都将搜索区间减半。其中的对数基本上是以2为底，表明每次都减少了一半的搜索范围。</p>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// C++版本 左闭右开</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">search</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="c1">// 定义target在左闭右开的区间里，即：[left, right)</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 因为left == right的时候，在[left, right)是无效的空间，所以使用 &lt;</span>
+            <span class="kt">int</span> <span class="n">middle</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="p">((</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="p">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="p">);</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">middle</span><span class="p">;</span> <span class="c1">// target 在左区间，在[left, middle)中</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="nf">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">middle</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">middle</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// target 在右区间，在[middle + 1, right)中</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span> <span class="c1">// nums[middle] == target</span>
+                <span class="k">return</span> <span class="n">middle</span><span class="p">;</span> <span class="c1">// 数组中找到目标值，直接返回下标</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// 未找到目标值</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="java版本">Java版本</h4>
+
+<p>左闭右闭区间</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">search</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 避免当 target 小于nums[0] nums[nums.length - 1]时多次循环运算</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">target</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">||</span> <span class="n">target</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">])</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="o">((</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">target</span><span class="o">)</span>
+                <span class="k">return</span> <span class="n">mid</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="o">)</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="o">)</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>左闭右开区间</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">search</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">left</span> <span class="o">+</span> <span class="o">((</span><span class="n">right</span> <span class="o">-</span> <span class="n">left</span><span class="o">)</span> <span class="o">&gt;&gt;</span> <span class="mi">1</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">==</span> <span class="n">target</span><span class="o">)</span>
+                <span class="k">return</span> <span class="n">mid</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&lt;</span> <span class="n">target</span><span class="o">)</span>
+                <span class="n">left</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span><span class="o">;</span>
+            <span class="k">else</span> <span class="nf">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">mid</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">target</span><span class="o">)</span>
+                <span class="n">right</span> <span class="o">=</span> <span class="n">mid</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="相关题目">相关题目</h4>
+
+<ul>
+  <li><a href="https://programmercarl.com/0035.搜索插入位置.html">35.搜索插入位置(opens new window)</a></li>
+  <li><a href="https://programmercarl.com/0034.在排序数组中查找元素的第一个和最后一个位置.html">34.在排序数组中查找元素的第一个和最后一个位置(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/sqrtx/">69.x 的平方根(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/valid-perfect-square/">367.有效的完全平方数(opens new window)</a></li>
+</ul>
+
+<h3 id="移除元素">移除元素</h3>
+
+<p><a href="https://leetcode.cn/problems/remove-element/">27.移除元素</a></p>
+
+<p>给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。</p>
+
+<p>不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并<strong>原地</strong>修改输入数组。</p>
+
+<p>元素的顺序可以改变。你不需要考虑数组中超出新长度后面的元素。</p>
+
+<p>示例 1:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>给定 nums = [3,2,2,3], val = 3, 函数应该返回新的长度 2, 并且 nums 中的前两个元素均为 2。 你不需要考虑数组中超出新长度后面的元素。
+</code></pre></div></div>
+
+<p>示例 2:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>给定 nums = [0,1,2,2,3,0,4,2], val = 2, 函数应该返回新的长度 5, 并且 nums 中的前五个元素为 0, 1, 3, 0, 4。
+</code></pre></div></div>
+
+<p><strong>你不需要考虑数组中超出新长度后面的元素。</strong></p>
+
+<h4 id="思路-1">思路</h4>
+
+<p>第一种：采用单指针和平方复杂度的暴力解法，每次查找到那个数字，令所有后面的n = n+1。</p>
+
+<p>第二种：双指针法（快慢指针法）： <strong>通过一个快指针和慢指针在一个for循环下完成两个for循环的工作。</strong></p>
+
+<p>定义快慢指针：</p>
+
+<ul>
+  <li>快指针：寻找新数组的元素 ，新数组就是不含有目标元素的数组</li>
+  <li>慢指针：指向更新 新数组下标的位置</li>
+</ul>
+
+<p>简单来说，就是快指针来“定义”慢指针的下一个元素（直接替换掉）</p>
+
+<h4 id="c版本-1">C++版本</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 时间复杂度：O(n^2)</span>
+<span class="c1">// 空间复杂度：O(1)</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">size</span> <span class="o">=</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 发现需要移除的元素，就将数组集体向前移动一位</span>
+                <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">size</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="n">nums</span><span class="p">[</span><span class="n">j</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="p">}</span>
+                <span class="n">i</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 因为下标i以后的数值都向前移动了一位，所以i也向前移动一位</span>
+                <span class="n">size</span><span class="o">--</span><span class="p">;</span> <span class="c1">// 此时数组的大小-1</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">size</span><span class="p">;</span>
+
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度：O(n^2)</li>
+  <li>空间复杂度：O(1)</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 时间复杂度：O(n)</span>
+<span class="c1">// 空间复杂度：O(1)</span>
+<span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">removeElement</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">slowIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">fastIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">fastIndex</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">fastIndex</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">val</span> <span class="o">!=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fastIndex</span><span class="p">])</span> <span class="p">{</span>
+                <span class="n">nums</span><span class="p">[</span><span class="n">slowIndex</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">fastIndex</span><span class="p">];</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">slowIndex</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="java版本-1">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">removeElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 快慢指针</span>
+        <span class="kt">int</span> <span class="n">slowIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">fastIndex</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">fastIndex</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">fastIndex</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">fastIndex</span><span class="o">]</span> <span class="o">!=</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">slowIndex</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">fastIndex</span><span class="o">];</span>
+                <span class="n">slowIndex</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">slowIndex</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//相向双指针法</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">removeElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">right</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="n">right</span><span class="o">--;</span> <span class="c1">//将right移到从右数第一个值不为val的位置</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span> <span class="c1">//left位置的元素需要移除</span>
+                <span class="c1">//将right位置的元素移到left（覆盖），right位置移除</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">];</span>
+                <span class="n">right</span><span class="o">--;</span>
+            <span class="o">}</span>
+            <span class="n">left</span><span class="o">++;</span>
+            <span class="k">while</span><span class="o">(</span><span class="n">right</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="o">&amp;&amp;</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="n">right</span><span class="o">--;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">left</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 相向双指针法（版本二）</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">removeElement</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">==</span> <span class="n">val</span><span class="o">){</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">];</span>
+                <span class="n">right</span><span class="o">--;</span>
+            <span class="o">}</span><span class="k">else</span> <span class="o">{</span>
+                <span class="c1">// 这里兼容了right指针指向的值与val相等的情况</span>
+                <span class="n">left</span><span class="o">++;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">left</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="相关题目-1">相关题目</h4>
+
+<ul>
+  <li><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26.删除排序数组中的重复项(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/move-zeroes/">283.移动零(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/backspace-string-compare/">844.比较含退格的字符串(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977.有序数组的平方(opens new window)</a></li>
+</ul>
+
+<h3 id="有序数组的平方">有序数组的平方</h3>
+
+<p><a href="https://leetcode.cn/problems/squares-of-a-sorted-array/">977.有序数组的平方</a></p>
+
+<p>给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序。</p>
+
+<p>示例 1：</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 输入：nums = [-4,-1,0,3,10]
+- 输出：[0,1,9,16,100]
+- 解释：平方后，数组变为 [16,1,0,9,100]，排序后，数组变为 [0,1,9,16,100]
+</code></pre></div></div>
+
+<p>示例 2：</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 输入：nums = [-7,-3,2,3,11]
+- 输出：[4,9,9,49,121]
+</code></pre></div></div>
+
+<h4 id="思路-2">思路</h4>
+
+<p>我的思路是先平方，后排序</p>
+
+<h5 id="暴力排序">暴力排序</h5>
+
+<p>最直观的想法，莫过于：每个数平方之后，排个序，代码如下：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sortedSquares</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="n">sort</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">begin</span><span class="p">(),</span> <span class="n">A</span><span class="p">.</span><span class="n">end</span><span class="p">());</span> <span class="c1">// 快速排序</span>
+        <span class="k">return</span> <span class="n">A</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>这个时间复杂度是 O(n + nlogn)， 可以说是O(nlogn)的时间复杂度，但为了和下面双指针法算法时间复杂度有鲜明对比，我记为 O(n + nlog n)。</p>
+
+<h5 id="双指针法">双指针法</h5>
+
+<p>数组其实是有序的， 只不过负数平方之后可能成为最大数了。</p>
+
+<p>那么数组平方的最大值就在数组的两端，不是最左边就是最右边，不可能是中间。</p>
+
+<p>此时可以考虑双指针法了，i指向起始位置，j指向终止位置。</p>
+
+<p>定义一个新数组result，和A数组一样的大小，让k指向result数组终止位置。</p>
+
+<p>如果<code class="language-plaintext highlighter-rouge">A[i] * A[i] &lt; A[j] * A[j]</code> 那么<code class="language-plaintext highlighter-rouge">result[k--] = A[j] * A[j];</code> 。</p>
+
+<p>如果<code class="language-plaintext highlighter-rouge">A[i] * A[i] &gt;= A[j] * A[j]</code> 那么<code class="language-plaintext highlighter-rouge">result[k--] = A[i] * A[i];</code> 。</p>
+
+<h4 id="c版本-2">C++版本</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">sortedSquares</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">A</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">k</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">(</span><span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">(),</span> <span class="mi">0</span><span class="p">);</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="n">A</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">j</span><span class="p">;)</span> <span class="p">{</span> <span class="c1">// 注意这里要i &lt;= j，因为最后要处理两个元素</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>  <span class="p">{</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">k</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                <span class="n">j</span><span class="o">--</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="k">else</span> <span class="p">{</span>
+                <span class="n">result</span><span class="p">[</span><span class="n">k</span><span class="o">--</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+                <span class="n">i</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<h4 id="java版本-2">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortedSquares</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">result</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">index</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">left</span> <span class="o">&lt;=</span> <span class="n">right</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">])</span> <span class="o">{</span>
+                <span class="c1">// 正数的相对位置是不变的， 需要调整的是负数平方后的相对位置</span>
+                <span class="n">result</span><span class="o">[</span><span class="n">index</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">];</span>
+                <span class="o">++</span><span class="n">left</span><span class="o">;</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">result</span><span class="o">[</span><span class="n">index</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">];</span>
+                <span class="o">--</span><span class="n">right</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[]</span> <span class="nf">sortedSquares</span><span class="o">(</span><span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">l</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">r</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span><span class="o">[]</span> <span class="n">res</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span> <span class="o">-</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">l</span> <span class="o">&lt;=</span> <span class="n">r</span><span class="o">){</span>
+            <span class="k">if</span><span class="o">(</span><span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">&gt;</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]){</span>
+                <span class="n">res</span><span class="o">[</span><span class="n">j</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">l</span><span class="o">++];</span>
+            <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                <span class="n">res</span><span class="o">[</span><span class="n">j</span><span class="o">--]</span> <span class="o">=</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">]</span> <span class="o">*</span> <span class="n">nums</span><span class="o">[</span><span class="n">r</span><span class="o">--];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="长度最小的子数组">长度最小的子数组</h3>
+
+<p><a href="https://leetcode.cn/problems/minimum-size-subarray-sum/">209.长度最小的子数组</a></p>
+
+<p>给定一个含有 n 个正整数的数组和一个正整数 s ，找出该数组中满足其和 ≥ s 的长度最小的 连续 子数组，并返回其长度。如果不存在符合条件的子数组，返回 0。</p>
+
+<p>示例：</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 输入：s = 7, nums = [2,3,1,2,4,3]
+- 输出：2
+- 解释：子数组 [4,3] 是该条件下的长度最小的子数组。
+</code></pre></div></div>
+<p>提示：</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- 1 &lt;= target &lt;= 10^9
+- 1 &lt;= nums.length &lt;= 10^5
+- 1 &lt;= nums[i] &lt;= 10^5
+</code></pre></div></div>
+
+<h4 id="思路-3">思路</h4>
+
+<p>滑动窗口</p>
+
+<p>在本题中实现滑动窗口，主要确定如下三点：</p>
+
+<ul>
+  <li>窗口内是什么？</li>
+  <li>如何移动窗口的起始位置？</li>
+  <li>如何移动窗口的结束位置？</li>
+</ul>
+
+<p>窗口就是 满足其和 ≥ s 的长度最小的 连续 子数组。</p>
+
+<p>窗口的起始位置如何移动：如果当前窗口的值大于等于s了，窗口就要向前移动了（也就是该缩小了）。</p>
+
+<p>窗口的结束位置如何移动：窗口的结束位置就是遍历数组的指针，也就是for循环里的索引。</p>
+
+<p>我的理解：首先窗口起始指针不动，移动结束指针，然后计算窗口内元素和，当大于s时，那么窗口长度是 ( j - i + 1) ，然后起始指针再移动，直到窗口内元素和小于s，然后再移动窗口结束元素。但我认为这种方法只能确认最小窗口长度（最小连续元素数）而不能准确的确定这个最小区间窗口起始位置。要如何确定？答：加一些其他变量来记录并更新窗口的起始结束值。</p>
+
+<h4 id="c版本-3">C++版本</h4>
+
+<div class="language-c++ highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">minSubArrayLen</span><span class="p">(</span><span class="kt">int</span> <span class="n">s</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">nums</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="n">INT32_MAX</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 滑动窗口数值之和</span>
+        <span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 滑动窗口起始位置</span>
+        <span class="kt">int</span> <span class="n">subLength</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 滑动窗口的长度</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+            <span class="c1">// 注意这里使用while，每次更新 i（起始位置），并不断比较子序列是否符合条件</span>
+            <span class="k">while</span> <span class="p">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="n">s</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">subLength</span> <span class="o">=</span> <span class="p">(</span><span class="n">j</span> <span class="o">-</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// 取子序列的长度</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">result</span> <span class="o">&lt;</span> <span class="n">subLength</span> <span class="o">?</span> <span class="n">result</span> <span class="o">:</span> <span class="n">subLength</span><span class="p">;</span>
+                <span class="n">sum</span> <span class="o">-=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">];</span> <span class="c1">// 这里体现出滑动窗口的精髓之处，不断变更i（子序列的起始位置）</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="c1">// 如果result没有被赋值的话，就返回0，说明没有符合条件的子序列</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">==</span> <span class="n">INT32_MAX</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度：O(n)</li>
+  <li>空间复杂度：O(1)</li>
+</ul>
+
+<h4 id="java版本-3">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+
+    <span class="c1">// 滑动窗口</span>
+    <span class="kd">public</span> <span class="kt">int</span> <span class="nf">minSubArrayLen</span><span class="o">(</span><span class="kt">int</span> <span class="n">s</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">nums</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">sum</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">result</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span><span class="o">;</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">right</span> <span class="o">&lt;</span> <span class="n">nums</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">right</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">sum</span> <span class="o">+=</span> <span class="n">nums</span><span class="o">[</span><span class="n">right</span><span class="o">];</span>
+            <span class="k">while</span> <span class="o">(</span><span class="n">sum</span> <span class="o">&gt;=</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="nc">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">result</span><span class="o">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="o">);</span>
+                <span class="n">sum</span> <span class="o">-=</span> <span class="n">nums</span><span class="o">[</span><span class="n">left</span><span class="o">++];</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">==</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">MAX_VALUE</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="n">result</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="相关题目-2">相关题目</h4>
+
+<ul>
+  <li><a href="https://leetcode.cn/problems/fruit-into-baskets/">904.水果成篮(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/minimum-window-substring/">76.最小覆盖子串(opens new window)</a></li>
+</ul>
+
+<h3 id="螺旋矩阵">螺旋矩阵</h3>
+
+<p>给定一个正整数 n，生成一个包含 1 到 n^2 所有元素，且元素按顺时针顺序螺旋排列的正方形矩阵。</p>
+
+<p>示例:</p>
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>输入: 3 
+输出: [ [ 1, 2, 3 ], [ 8, 9, 4 ], [ 7, 6, 5 ] ]
+</code></pre></div></div>
+
+<h4 id="思路-4">思路</h4>
+
+<p>模拟顺时针画矩阵的过程:</p>
+
+<ul>
+  <li>填充上行从左到右</li>
+  <li>填充右列从上到下</li>
+  <li>填充下行从右到左</li>
+  <li>填充左列从下到上</li>
+</ul>
+
+<p>由外向内一圈一圈这么画下去。</p>
+
+<h4 id="c版本-4">C++版本</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">generateMatrix</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&gt;</span> <span class="n">res</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span> <span class="c1">// 使用vector定义一个二维数组</span>
+        <span class="kt">int</span> <span class="n">startx</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">starty</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 定义每循环一个圈的起始位置</span>
+        <span class="kt">int</span> <span class="n">loop</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 每个圈循环几次，例如n为奇数3，那么loop = 1 只是循环一圈，矩阵中间的值需要单独处理</span>
+        <span class="kt">int</span> <span class="n">mid</span> <span class="o">=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="c1">// 矩阵中间的位置，例如：n为3， 中间的位置就是(1，1)，n为5，中间位置为(2, 2)</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 用来给矩阵中每一个空格赋值</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 需要控制每一条边遍历的长度，每次循环右边界收缩一位</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">loop</span> <span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">i</span> <span class="o">=</span> <span class="n">startx</span><span class="p">;</span>
+            <span class="n">j</span> <span class="o">=</span> <span class="n">starty</span><span class="p">;</span>
+
+            <span class="c1">// 下面开始的四个for就是模拟转了一圈</span>
+            <span class="c1">// 模拟填充上行从左到右(左闭右开)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">j</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">offset</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">// 模拟填充右列从上到下(左闭右开)</span>
+            <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">offset</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">// 模拟填充下行从右到左(左闭右开)</span>
+            <span class="k">for</span> <span class="p">(;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">starty</span><span class="p">;</span> <span class="n">j</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="c1">// 模拟填充左列从下到上(左闭右开)</span>
+            <span class="k">for</span> <span class="p">(;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">startx</span><span class="p">;</span> <span class="n">i</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="c1">// 第二圈开始的时候，起始位置要各自加1， 例如：第一圈起始位置是(0, 0)，第二圈起始位置是(1, 1)</span>
+            <span class="n">startx</span><span class="o">++</span><span class="p">;</span>
+            <span class="n">starty</span><span class="o">++</span><span class="p">;</span>
+
+            <span class="c1">// offset 控制每一圈里每一条边遍历的长度</span>
+            <span class="n">offset</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 如果n为奇数的话，需要单独给矩阵最中间的位置赋值</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">res</span><span class="p">[</span><span class="n">mid</span><span class="p">][</span><span class="n">mid</span><span class="p">]</span> <span class="o">=</span> <span class="n">count</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度 O(n^2): 模拟遍历二维矩阵的时间</li>
+  <li>空间复杂度 O(1)</li>
+</ul>
+
+<h4 id="java版本-4">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kt">int</span><span class="o">[][]</span> <span class="nf">generateMatrix</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kt">int</span><span class="o">[][]</span> <span class="n">nums</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">][</span><span class="n">n</span><span class="o">];</span>
+        <span class="kt">int</span> <span class="n">startX</span> <span class="o">=</span> <span class="mi">0</span><span class="o">,</span> <span class="n">startY</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span>  <span class="c1">// 每一圈的起始点</span>
+        <span class="kt">int</span> <span class="n">offset</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>  <span class="c1">// 矩阵中需要填写的数字</span>
+        <span class="kt">int</span> <span class="n">loop</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span> <span class="c1">// 记录当前的圈数</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="o">,</span> <span class="n">j</span><span class="o">;</span> <span class="c1">// j 代表列, i 代表行;</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">loop</span> <span class="o">&lt;=</span> <span class="n">n</span> <span class="o">/</span> <span class="mi">2</span><span class="o">)</span> <span class="o">{</span>
+
+            <span class="c1">// 顶部</span>
+            <span class="c1">// 左闭右开，所以判断循环结束时， j 不能等于 n - offset</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">j</span> <span class="o">=</span> <span class="n">startY</span><span class="o">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">offset</span><span class="o">;</span> <span class="n">j</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">startX</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++;</span>
+            <span class="o">}</span>
+
+            <span class="c1">// 右列</span>
+            <span class="c1">// 左闭右开，所以判断循环结束时， i 不能等于 n - offset</span>
+            <span class="k">for</span> <span class="o">(</span><span class="n">i</span> <span class="o">=</span> <span class="n">startX</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">n</span> <span class="o">-</span> <span class="n">offset</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++;</span>
+            <span class="o">}</span>
+
+            <span class="c1">// 底部</span>
+            <span class="c1">// 左闭右开，所以判断循环结束时， j != startY</span>
+            <span class="k">for</span> <span class="o">(;</span> <span class="n">j</span> <span class="o">&gt;</span> <span class="n">startY</span><span class="o">;</span> <span class="n">j</span><span class="o">--)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++;</span>
+            <span class="o">}</span>
+
+            <span class="c1">// 左列</span>
+            <span class="c1">// 左闭右开，所以判断循环结束时， i != startX</span>
+            <span class="k">for</span> <span class="o">(;</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="n">startX</span><span class="o">;</span> <span class="n">i</span><span class="o">--)</span> <span class="o">{</span>
+                <span class="n">nums</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">++;</span>
+            <span class="o">}</span>
+            <span class="n">startX</span><span class="o">++;</span>
+            <span class="n">startY</span><span class="o">++;</span>
+            <span class="n">offset</span><span class="o">++;</span>
+            <span class="n">loop</span><span class="o">++;</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">n</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">1</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// n 为奇数时，单独处理矩阵中心的值</span>
+            <span class="n">nums</span><span class="o">[</span><span class="n">startX</span><span class="o">][</span><span class="n">startY</span><span class="o">]</span> <span class="o">=</span> <span class="n">count</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">nums</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h4 id="相关题目-3">相关题目</h4>
+
+<ul>
+  <li><a href="https://leetcode.cn/problems/spiral-matrix/">54.螺旋矩阵(opens new window)</a></li>
+  <li><a href="https://leetcode.cn/problems/shun-shi-zhen-da-yin-ju-zhen-lcof/">剑指Offer 29.顺时针打印矩阵</a></li>
+</ul>
+
+<h3 id="总结">总结</h3>
+
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/%E6%95%B0%E7%BB%84%E6%80%BB%E7%BB%93.png" alt="img" /></p>
+
+<h2 id="链表">链表</h2>
+
+<p>关键词：</p>
+
+<p>我的想法：链表主要是操纵节点指针。同时需要对废弃的节点进行内存释放处理。还有就是链表必须注意很难倒序，一般都是多个指针配合行动。</p>
+
+<h3 id="移除链表元素">移除链表元素</h3>
+
+<p>题意：删除链表中等于给定值 val 的所有节点。</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>示例 1： 输入：head = [1,2,6,3,4,5,6], val = 6 输出：[1,2,3,4,5]
+
+示例 2： 输入：head = [], val = 1 输出：[]
+
+示例 3： 输入：head = [7,7,7,7], val = 7 输出：[]
+</code></pre></div></div>
+
+<h4 id="思路-5">思路</h4>
+
+<p>链表的定义</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 单链表</span>
+<span class="k">struct</span> <span class="nc">ListNode</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>  <span class="c1">// 节点上存储的元素</span>
+    <span class="n">ListNode</span> <span class="o">*</span><span class="n">next</span><span class="p">;</span>  <span class="c1">// 指向下一个节点的指针</span>
+    <span class="n">ListNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">x</span><span class="p">)</span> <span class="o">:</span> <span class="n">val</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">NULL</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// 节点的构造函数</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>移除某个元素必须要将指针指向前一个和后一个元素，然后用前一个元素的指向后一个元素。并释放内存。</p>
+
+<h4 id="c版本-5">C++版本</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">removeElements</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 删除头结点</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">head</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// 注意这里不是if</span>
+            <span class="n">ListNode</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+            <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="k">delete</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="c1">// 删除非头结点</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">ListNode</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="k">delete</span> <span class="n">tmp</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度: O(n)</li>
+  <li>空间复杂度: O(1)</li>
+</ul>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">removeElements</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">dummyHead</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 设置一个虚拟头结点</span>
+        <span class="n">dummyHead</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="c1">// 将虚拟头结点指向head，这样方便后面做删除操作</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">dummyHead</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span><span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">==</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">ListNode</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+                <span class="k">delete</span> <span class="n">tmp</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">dummyHead</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">dummyHead</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度: O(n)</li>
+  <li>空间复杂度: O(1)</li>
+</ul>
+
+<h4 id="java版本-5">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">**</span>
+ <span class="o">*</span> <span class="n">添加虚节点方式</span>
+ <span class="o">*</span> <span class="n">时间复杂度</span> <span class="no">O</span><span class="o">(</span><span class="n">n</span><span class="o">)</span>
+ <span class="o">*</span> <span class="n">空间复杂度</span> <span class="no">O</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span>
+ <span class="o">*</span> <span class="nd">@param</span> <span class="n">head</span>
+ <span class="o">*</span> <span class="nd">@param</span> <span class="n">val</span>
+ <span class="o">*</span> <span class="nd">@return</span>
+ <span class="o">*/</span>
+<span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">removeElements</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// 因为删除可能涉及到头节点，所以设置dummy节点，统一操作</span>
+    <span class="nc">ListNode</span> <span class="n">dummy</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(-</span><span class="mi">1</span><span class="o">,</span> <span class="n">head</span><span class="o">);</span>
+    <span class="nc">ListNode</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">dummy</span><span class="o">;</span>
+    <span class="nc">ListNode</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">pre</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">dummy</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**
+ * 不添加虚拟节点方式
+ * 时间复杂度 O(n)
+ * 空间复杂度 O(1)
+ * @param head
+ * @param val
+ * @return
+ */</span>
+<span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">removeElements</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">head</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">head</span><span class="o">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// 已经为null，提前退出</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="c1">// 已确定当前head.val != val</span>
+    <span class="nc">ListNode</span> <span class="n">pre</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="nc">ListNode</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span><span class="o">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">pre</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="cm">/**
+ * 不添加虚拟节点and pre Node方式
+ * 时间复杂度 O(n)
+ * 空间复杂度 O(1)
+ * @param head
+ * @param val
+ * @return
+ */</span>
+<span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">removeElements</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">val</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">head</span><span class="o">!=</span><span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">head</span><span class="o">.</span><span class="na">val</span><span class="o">==</span><span class="n">val</span><span class="o">){</span>
+        <span class="n">head</span> <span class="o">=</span> <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nc">ListNode</span> <span class="n">curr</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+    <span class="k">while</span><span class="o">(</span><span class="n">curr</span><span class="o">!=</span><span class="kc">null</span><span class="o">){</span>
+        <span class="k">while</span><span class="o">(</span><span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">!=</span><span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">val</span> <span class="o">==</span> <span class="n">val</span><span class="o">){</span>
+            <span class="n">curr</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">curr</span> <span class="o">=</span> <span class="n">curr</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="设计链表">设计链表</h3>
+
+<p>在链表类中实现这些功能：</p>
+
+<ul>
+  <li>get(index)：获取链表中第 index 个节点的值。如果索引无效，则返回-1。</li>
+  <li>addAtHead(val)：在链表的第一个元素之前添加一个值为 val 的节点。插入后，新节点将成为链表的第一个节点。</li>
+  <li>addAtTail(val)：将值为 val 的节点追加到链表的最后一个元素。</li>
+  <li>addAtIndex(index,val)：在链表中的第 index 个节点之前添加值为 val 的节点。如果 index 等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。</li>
+  <li>deleteAtIndex(index)：如果索引 index 有效，则删除链表中的第 index 个节点。</li>
+</ul>
+
+<h4 id="思路-6">思路</h4>
+
+<ul>
+  <li>获取链表第index个节点的数值</li>
+  <li>在链表的最前面插入一个节点</li>
+  <li>在链表的最后面插入一个节点</li>
+  <li>在链表第index个节点前面插入一个节点</li>
+  <li>删除链表的第index个节点</li>
+</ul>
+
+<p>可以说这五个接口，已经覆盖了链表的常见操作，是练习链表操作非常好的一道题目。</p>
+
+<p><strong>链表操作的两种方式：</strong></p>
+
+<ol>
+  <li>直接使用原来的链表来进行操作。</li>
+  <li>设置一个虚拟头结点在进行操作。</li>
+</ol>
+
+<h4 id="c版本-6">C++版本</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">MyLinkedList</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="c1">// 定义链表节点结构体</span>
+    <span class="k">struct</span> <span class="nc">LinkedNode</span> <span class="p">{</span>
+        <span class="kt">int</span> <span class="n">val</span><span class="p">;</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">next</span><span class="p">;</span>
+        <span class="n">LinkedNode</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span><span class="o">:</span><span class="n">val</span><span class="p">(</span><span class="n">val</span><span class="p">),</span> <span class="n">next</span><span class="p">(</span><span class="nb">nullptr</span><span class="p">){}</span>
+    <span class="p">};</span>
+
+    <span class="c1">// 初始化链表</span>
+    <span class="n">MyLinkedList</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">_dummyHead</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedNode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 这里定义的头结点 是一个虚拟头结点，而不是真正的链表头结点</span>
+        <span class="n">_size</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 获取到第index个节点数值，如果index是非法数值直接返回-1， 注意index是从0开始的，第0个节点就是头结点</span>
+    <span class="kt">int</span> <span class="nf">get</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="p">(</span><span class="n">_size</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">index</span><span class="o">--</span><span class="p">){</span> <span class="c1">// 如果--index 就会陷入死循环</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">val</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 在链表最前面插入一个节点，插入完成后，新插入的节点为链表的新的头结点</span>
+    <span class="kt">void</span> <span class="nf">addAtHead</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">_dummyHead</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+        <span class="n">_size</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 在链表最后面添加一个节点</span>
+    <span class="kt">void</span> <span class="nf">addAtTail</span><span class="p">(</span><span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">){</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+        <span class="n">_size</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 在第index个节点之前插入一个新节点，例如index为0，那么新插入的节点为链表的新头节点。</span>
+    <span class="c1">// 如果index 等于链表的长度，则说明是新插入的节点为链表的尾结点</span>
+    <span class="c1">// 如果index大于链表的长度，则返回空</span>
+    <span class="c1">// 如果index小于0，则在头部插入节点</span>
+    <span class="kt">void</span> <span class="nf">addAtIndex</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span> <span class="p">{</span>
+
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&gt;</span> <span class="n">_size</span><span class="p">)</span> <span class="k">return</span><span class="p">;</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>        
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">newNode</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedNode</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">index</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">newNode</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">newNode</span><span class="p">;</span>
+        <span class="n">_size</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 删除第index个节点，如果index 大于等于链表的长度，直接return，注意index是从0开始的</span>
+    <span class="kt">void</span> <span class="nf">deleteAtIndex</span><span class="p">(</span><span class="kt">int</span> <span class="n">index</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">index</span> <span class="o">&gt;=</span> <span class="n">_size</span> <span class="o">||</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">index</span><span class="o">--</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span> <span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">tmp</span><span class="p">;</span>
+        <span class="c1">//delete命令指示释放了tmp指针原本所指的那部分内存，</span>
+        <span class="c1">//被delete后的指针tmp的值（地址）并非就是NULL，而是随机值。也就是被delete后，</span>
+        <span class="c1">//如果不再加上一句tmp=nullptr,tmp会成为乱指的野指针</span>
+        <span class="c1">//如果之后的程序不小心使用了tmp，会指向难以预想的内存空间</span>
+        <span class="n">tmp</span><span class="o">=</span><span class="nb">nullptr</span><span class="p">;</span>
+        <span class="n">_size</span><span class="o">--</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// 打印链表</span>
+    <span class="kt">void</span> <span class="nf">printLinkedList</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">_dummyHead</span><span class="p">;</span>
+        <span class="k">while</span> <span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">val</span> <span class="o">&lt;&lt;</span> <span class="s">" "</span><span class="p">;</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="k">private</span><span class="o">:</span>
+    <span class="kt">int</span> <span class="n">_size</span><span class="p">;</span>
+    <span class="n">LinkedNode</span><span class="o">*</span> <span class="n">_dummyHead</span><span class="p">;</span>
+
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度: 涉及 <code class="language-plaintext highlighter-rouge">index</code> 的相关操作为 O(index), 其余为 O(1)</li>
+  <li>空间复杂度: O(n)</li>
+</ul>
+
+<h3 id="翻转链表">翻转链表</h3>
+
+<p>题意：反转一个单链表。</p>
+
+<p>示例: 输入: 1-&gt;2-&gt;3-&gt;4-&gt;5-&gt;NULL 输出: 5-&gt;4-&gt;3-&gt;2-&gt;1-&gt;NULL</p>
+
+<h4 id="思路-7">思路</h4>
+
+<p>如果再定义一个新的链表，实现链表元素的反转，其实这是对内存空间的浪费。</p>
+
+<p>其实只需要改变链表的next指针的指向，直接将链表反转 ，而不用重新定义一个新的链表。</p>
+
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210218090901207.png" alt="206_反转链表" style="zoom:67%;" /></p>
+
+<p>双指针移动，后一个指针在下一个节点，先将其下一个节点的-&gt;next 用tmp保存一下，然后指向上一个节点，然后上一个节点指向现在这个节点，现在的节点 指向tmp节点。</p>
+
+<p>个人感想：感觉不算难。</p>
+
+<h4 id="c版本-7">C++版本</h4>
+
+<p>双指针法</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">reverseList</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">temp</span><span class="p">;</span> <span class="c1">// 保存cur的下一个节点</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">pre</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">cur</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>  <span class="c1">// 保存一下 cur的下一个节点，因为接下来要改变cur-&gt;next</span>
+            <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span> <span class="c1">// 翻转操作</span>
+            <span class="c1">// 更新pre 和 cur指针</span>
+            <span class="n">pre</span> <span class="o">=</span> <span class="n">cur</span><span class="p">;</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">temp</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="n">pre</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度: O(n)</li>
+  <li>空间复杂度: O(1)</li>
+</ul>
+
+<p>递归法</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">reverse</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">pre</span><span class="p">,</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">cur</span><span class="p">){</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">cur</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span> <span class="n">pre</span><span class="p">;</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">pre</span><span class="p">;</span>
+        <span class="c1">// 可以和双指针法的代码进行对比，如下递归的写法，其实就是做了这两步</span>
+        <span class="c1">// pre = cur;</span>
+        <span class="c1">// cur = temp;</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="n">cur</span><span class="p">,</span><span class="n">temp</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="nf">reverseList</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 和双指针法初始化是一样的逻辑</span>
+        <span class="c1">// ListNode* cur = head;</span>
+        <span class="c1">// ListNode* pre = NULL;</span>
+        <span class="k">return</span> <span class="n">reverse</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="n">head</span><span class="p">);</span>
+    <span class="p">}</span>
+
+<span class="p">};</span>
+</code></pre></div></div>
+
+<p>递归法相对抽象一些，但是其实和双指针法是一样的逻辑，同样是当cur为空的时候循环结束，不断将cur指向pre的过程。</p>
+
+<p>关键是初始化的地方，可能有的同学会不理解， 可以看到双指针法中初始化 cur = head，pre = NULL，在递归法中可以从如下代码看出初始化的逻辑也是一样的，只不过写法变了。</p>
+
+<p>具体可以看代码（已经详细注释），<strong>双指针法写出来之后，理解如下递归写法就不难了，代码逻辑都是一样的。</strong></p>
+
+<ul>
+  <li>时间复杂度: O(n), 要递归处理链表的每个节点</li>
+  <li>空间复杂度: O(n), 递归调用了 n 层栈空间</li>
+</ul>
+
+<p>我们可以发现，上面的递归写法和双指针法实质上都是从前往后翻转指针指向，其实还有另外一种与双指针法不同思路的递归写法：从后往前翻转指针指向。</p>
+
+<p>具体代码如下（带详细注释）：</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">reverseList</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// 边缘条件判断</span>
+        <span class="k">if</span><span class="p">(</span><span class="n">head</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="k">return</span> <span class="n">head</span><span class="p">;</span>
+        
+        <span class="c1">// 递归调用，翻转第二个节点开始往后的链表</span>
+        <span class="n">ListNode</span> <span class="o">*</span><span class="n">last</span> <span class="o">=</span> <span class="n">reverseList</span><span class="p">(</span><span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
+        <span class="c1">// 翻转头节点与第二个节点的指向</span>
+        <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span>
+        <span class="c1">// 此时的 head 节点为尾节点，next 需要指向 NULL</span>
+        <span class="n">head</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">last</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span> 
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度: O(n)</li>
+  <li>空间复杂度: O(n)</li>
+</ul>
+
+<h4 id="java版本-6">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 双指针</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">reverseList</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">ListNode</span> <span class="n">prev</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="nc">ListNode</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="nc">ListNode</span> <span class="n">temp</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">cur</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">temp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span><span class="c1">// 保存下一个节点</span>
+            <span class="n">cur</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">;</span>
+            <span class="n">prev</span> <span class="o">=</span> <span class="n">cur</span><span class="o">;</span>
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">temp</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">prev</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 递归 </span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">reverseList</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nf">reverse</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="n">head</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nc">ListNode</span> <span class="nf">reverse</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">prev</span><span class="o">,</span> <span class="nc">ListNode</span> <span class="n">cur</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">cur</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">prev</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="nc">ListNode</span> <span class="n">temp</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="na">next</span><span class="o">;</span><span class="c1">// 先保存下一个节点</span>
+        <span class="n">cur</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">prev</span><span class="o">;</span><span class="c1">// 反转</span>
+        <span class="c1">// 更新prev、cur位置</span>
+        <span class="c1">// prev = cur;</span>
+        <span class="c1">// cur = temp;</span>
+        <span class="k">return</span> <span class="nf">reverse</span><span class="o">(</span><span class="n">cur</span><span class="o">,</span> <span class="n">temp</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 从后向前递归</span>
+<span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="nc">ListNode</span> <span class="nf">reverseList</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// 边缘条件判断</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">head</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">next</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="k">return</span> <span class="n">head</span><span class="o">;</span>
+        
+        <span class="c1">// 递归调用，翻转第二个节点开始往后的链表</span>
+        <span class="nc">ListNode</span> <span class="n">last</span> <span class="o">=</span> <span class="n">reverseList</span><span class="o">(</span><span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">);</span>
+        <span class="c1">// 翻转头节点与第二个节点的指向</span>
+        <span class="n">head</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="c1">// 此时的 head 节点为尾节点，next 需要指向 NULL</span>
+        <span class="n">head</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">return</span> <span class="n">last</span><span class="o">;</span>
+    <span class="o">}</span> 
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="两两交换链表中的节点">两两交换链表中的节点</h3>
+
+<p><a href="https://leetcode.cn/problems/swap-nodes-in-pairs/">24.两两交换链表中的节点</a></p>
+
+<p>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。</p>
+
+<p>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。</p>
+
+<p>这道题目正常模拟就可以了。</p>
+
+<p>建议使用虚拟头结点，这样会方便很多，要不然每次针对头结点（没有前一个指针指向头结点），还要单独处理。</p>
+
+<p>对虚拟头结点的操作，还不熟悉的话，可以看这篇<a href="https://programmercarl.com/0203.移除链表元素.html">链表：听说用虚拟头节点会方便很多？ (opens new window)</a>。</p>
+
+<p>接下来就是交换相邻两个元素了，<strong>此时一定要画图，不画图，操作多个指针很容易乱，而且要操作的先后顺序</strong></p>
+
+<p>初始时，cur指向虚拟头结点，然后进行如下三步：</p>
+
+<p><img src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B91.png" alt="24.两两交换链表中的节点1" /></p>
+
+<p>操作之后，链表如下：</p>
+
+<p><img src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B92.png" alt="24.两两交换链表中的节点2" /></p>
+
+<p>看这个可能就更直观一些了：</p>
+
+<p><img src="https://code-thinking.cdn.bcebos.com/pics/24.%E4%B8%A4%E4%B8%A4%E4%BA%A4%E6%8D%A2%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E8%8A%82%E7%82%B93.png" alt="24.两两交换链表中的节点3" /></p>
+
+<p>对应的C++代码实现如下： （注释中详细和如上图中的三步做对应）</p>
+
+<h4 id="c版本-8">C++版本</h4>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Solution</span> <span class="p">{</span>
+<span class="nl">public:</span>
+    <span class="n">ListNode</span><span class="o">*</span> <span class="n">swapPairs</span><span class="p">(</span><span class="n">ListNode</span><span class="o">*</span> <span class="n">head</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">dummyHead</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ListNode</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span> <span class="c1">// 设置一个虚拟头结点</span>
+        <span class="n">dummyHead</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">head</span><span class="p">;</span> <span class="c1">// 将虚拟头结点指向head，这样方便后面做删除操作</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">dummyHead</span><span class="p">;</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">nullptr</span> <span class="o">&amp;&amp;</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">nullptr</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">ListNode</span><span class="o">*</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span> <span class="c1">// 记录临时节点</span>
+            <span class="n">ListNode</span><span class="o">*</span> <span class="n">tmp1</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span> <span class="c1">// 记录临时节点</span>
+
+            <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>    <span class="c1">// 步骤一</span>
+            <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>          <span class="c1">// 步骤二</span>
+            <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">tmp1</span><span class="p">;</span>   <span class="c1">// 步骤三</span>
+
+            <span class="n">cur</span> <span class="o">=</span> <span class="n">cur</span><span class="o">-&gt;</span><span class="n">next</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span> <span class="c1">// cur移动两位，准备下一轮交换</span>
+        <span class="p">}</span>
+        <span class="n">ListNode</span><span class="o">*</span> <span class="n">result</span> <span class="o">=</span> <span class="n">dummyHead</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
+        <span class="k">delete</span> <span class="n">dummyHead</span><span class="p">;</span>
+        <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div></div>
+
+<ul>
+  <li>时间复杂度：O(n)</li>
+  <li>空间复杂度：O(1)</li>
+</ul>
+
+<h3 id="删除链表的倒数第n个节点">删除链表的倒数第N个节点</h3>
+
+<p>给你一个链表，删除链表的倒数第 n 个结点，并且返回链表的头结点。</p>
+
+<p>进阶：你能尝试使用一趟扫描实现吗？</p>
+
+<p>示例 1：</p>
+
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210510085957392.png" alt="19.删除链表的倒数第N个节点" /></p>
+
+<p>输入：head = [1,2,3,4,5], n = 2 输出：[1,2,3,5] 示例 2：</p>
+
+<p>输入：head = [1], n = 1 输出：[] 示例 3：</p>
+
+<p>输入：head = [1,2], n = 1 输出：[1]</p>
+
+<h4 id="思路-8">思路</h4>
+
+<p>双指针的经典应用，如果要删除倒数第n个节点，让fast移动n步，然后让fast和slow同时移动，直到fast指向链表末尾。删掉slow所指向的节点就可以了。</p>
+
+<p>思路是这样的，但要注意一些细节。</p>
+
+<p>分为如下几步：</p>
+
+<ul>
+  <li>首先这里我推荐大家使用虚拟头结点，这样方便处理删除实际头结点的逻辑，如果虚拟头结点不清楚，可以看这篇： <a href="https://programmercarl.com/0203.移除链表元素.html">链表：听说用虚拟头节点会方便很多</a></li>
+  <li>定义fast指针和slow指针，初始值为虚拟头结点，如图：</li>
+</ul>
+
+<p><img src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B9.png" alt="img" /></p>
+
+<ul>
+  <li>fast首先走n + 1步 ，为什么是n+1呢，因为只有这样同时移动的时候slow才能指向删除节点的上一个节点（方便做删除操作），如图： <img src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B91.png" alt="img" /></li>
+  <li>fast和slow同时移动，直到fast指向末尾，如题： <img src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B92.png" alt="img" /></li>
+  <li>删除slow指向的下一个节点，如图： <img src="https://code-thinking.cdn.bcebos.com/pics/19.%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E7%9A%84%E5%80%92%E6%95%B0%E7%AC%ACN%E4%B8%AA%E8%8A%82%E7%82%B93.png" alt="img" /></li>
+</ul>
+
+<h4 id="java版本-7">Java版本</h4>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Solution</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">ListNode</span> <span class="nf">removeNthFromEnd</span><span class="o">(</span><span class="nc">ListNode</span> <span class="n">head</span><span class="o">,</span> <span class="kt">int</span> <span class="n">n</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//新建一个虚拟头节点指向head</span>
+        <span class="nc">ListNode</span> <span class="n">dummyNode</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ListNode</span><span class="o">(</span><span class="mi">0</span><span class="o">);</span>
+        <span class="n">dummyNode</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">head</span><span class="o">;</span>
+        <span class="c1">//快慢指针指向虚拟头节点</span>
+        <span class="nc">ListNode</span> <span class="n">fastIndex</span> <span class="o">=</span> <span class="n">dummyNode</span><span class="o">;</span>
+        <span class="nc">ListNode</span> <span class="n">slowIndex</span> <span class="o">=</span> <span class="n">dummyNode</span><span class="o">;</span>
+
+        <span class="c1">// 只要快慢指针相差 n 个结点即可</span>
+        <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;=</span> <span class="n">n</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+            <span class="n">fastIndex</span> <span class="o">=</span> <span class="n">fastIndex</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="k">while</span> <span class="o">(</span><span class="n">fastIndex</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">fastIndex</span> <span class="o">=</span> <span class="n">fastIndex</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+            <span class="n">slowIndex</span> <span class="o">=</span> <span class="n">slowIndex</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="c1">// 此时 slowIndex 的位置就是待删除元素的前一个位置。</span>
+        <span class="c1">// 具体情况可自己画一个链表长度为 3 的图来模拟代码来理解</span>
+        <span class="c1">// 检查 slowIndex.next 是否为 null，以避免空指针异常</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">slowIndex</span><span class="o">.</span><span class="na">next</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">slowIndex</span><span class="o">.</span><span class="na">next</span> <span class="o">=</span> <span class="n">slowIndex</span><span class="o">.</span><span class="na">next</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">dummyNode</span><span class="o">.</span><span class="na">next</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="面试题-0207-链表相交">面试题 02.07. 链表相交</h3>
+
+<p>同：160.链表相交</p>
+
+<p><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists-lcci/">力扣题目链接(opens new window)</a></p>
+
+<p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表没有交点，返回 null 。</p>
+
+<p>图示两个链表在节点 c1 开始相交：</p>
+
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20211219221657.png" alt="img" /></p>
+
+<h2 id="哈希表">哈希表</h2>
+
+<h2 id="字符串">字符串</h2>
+
+<h2 id="双指针法总结">双指针法总结</h2>
+
+<h2 id="栈与队列">栈与队列</h2>
+
+<h2 id="第一部分结束">第一部分结束</h2>
+
+<h2 id="二叉树">二叉树</h2>
+
+<h2 id="回溯算法">回溯算法</h2>
+
+<h2 id="贪心算法">贪心算法</h2>
+
+<h2 id="动态规划">动态规划</h2>
+
+<h2 id="单调栈">单调栈</h2>
+
+<h2 id="图论">图论</h2>
+
+<h2 id="第二部分结束">第二部分结束</h2>
+
+
+                <hr style="visibility: hidden;">
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/2024/05/03/CI_in_DevOps/" data-toggle="tooltip" data-placement="top" title="DevOps中的CI">
+                        Previous<br>
+                        <span>DevOps中的CI</span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2024/06/10/Life/" data-toggle="tooltip" data-placement="top" title="2024年年中总结">
+                        Next<br>
+                        <span>2024年年中总结</span>
+                        </a>
+                    </li>
+                    
+                </ul>
+
+
+                
+
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+                				<a href="/tags/#DevOps" title="DevOps" rel="1">
+                                    DevOps
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#CI/CD" title="CI/CD" rel="1">
+                                    CI/CD
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Leetcode" title="Leetcode" rel="1">
+                                    Leetcode
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Algorithm" title="Algorithm" rel="1">
+                                    Algorithm
+                                </a>
+                            
+        				
+                            
+                				<a href="/tags/#Life" title="Life" rel="1">
+                                    Life
+                                </a>
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="https://egh0bww1.com/">YY-include</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- add support for mathjax -->
+
+
+<!-- add support for mermaid -->
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async('//js/anchor.min.js',function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+
+                <p class="copyright text-muted">
+                        <!-- <span id="busuanzi_container_site_pv">本站总访问量<span id="fix_site_pv"></span>次<span id="busuanzi_value_site_pv" style="display: none;"></span></span>
+                        <span id="busuanzi_container_site_uv">访客数<span id="fix_site_uv"></span>人<span id="busuanzi_value_site_uv" style="display: none;"></span></span>
+                        <br>
+                        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span> -->
+                    <br>
+                    Copyright &copy; Jwb's Blog 2025
+                    <br>
+                    Theme by <a href="https://github.com/huxpro/huxpro.github.io">Hux</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- back-to-top -->
+<div id="back-top">
+    <a href="#section" data-toggle="tooltip" data-placement="top" title="top">
+    <i class="fa fa-chevron-up" aria-hidden="true"></i>
+    </a>
+</div>
+
+<!-- jQuery -->
+<script src="//js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="//js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="//js/blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="//js/snackbar.js "></script>
+<script src="//js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async('//js/jquery.tagcloud.js',function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!-- fastClick.js -->
+<script>
+    async('//js/fastclick.min_4.js', function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- 不蒜子统计 -->
+<script defer src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+<!-- 运行时间统计 -->
+<!-- <script>
+    var now = new Date();
+    var getStatistics = false;
+    var changeDone = false;
+    function createtime() {
+        var grt= new Date("01/11/2015 20:01:26");
+        now.setTime(now.getTime()+250);
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}
+        document.getElementById("timeDate").innerHTML = "本站已运行 "+dnum+" 天 ";
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        // 补充统计
+        if(!getStatistics && ""!=document.getElementById("busuanzi_value_site_uv").innerHTML){getStatistics = true;}
+        if(getStatistics && !changeDone) {
+            site_pv = document.getElementById("busuanzi_value_site_pv").innerHTML;
+            site_uv = document.getElementById("busuanzi_value_site_uv").innerHTML;
+            site_pv_num = parseInt(site_pv,10) + 572573;
+            site_uv_num = parseInt(site_uv,10) + 490731;
+            document.getElementById("fix_site_pv").innerHTML = site_pv_num;
+            document.getElementById("fix_site_uv").innerHTML = site_uv_num;
+            changeDone = true;
+        }
+    }
+    createtime();
+    
+</script> -->
+
+<!-- back-top -->
+<script type="module">
+    $('#back-top').hide();
+    $(document).ready(function () {
+    $(window).scroll(function () {
+    if ($(this).scrollTop() > 250) {
+      $('#back-top').fadeIn();
+    } else {
+      $('#back-top').fadeOut();
+    }
+    });
+    $('#back-top a').click(function () {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 800);
+    return false;
+    });
+  });
+  </script>
+
+
+
+
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        // init
+        var P = $('div.post-container'), a, n, t, l, i, c;
+
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     */
+    async("//js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+</body>
+
+</html>
