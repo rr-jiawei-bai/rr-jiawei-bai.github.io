@@ -232,15 +232,15 @@
 
 <h2 id="软件开发过程设计工具">软件开发过程&amp;设计工具</h2>
 
-<p><img src="/site/img/in-post/CICD/devops.png" alt="image-20240502231443039" /></p>
+<p><img src="/img/in-post/CICD/devops.png" alt="image-20240502231443039" /></p>
 
 <h3 id="cicd持续集成和持续部署过程学习">CI/CD(持续集成和持续部署过程学习)</h3>
 
-<p><img src="/site/img/in-post/CICD/image-20240502220404765.png" alt="image-20240502220404765" style="zoom: 50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502220404765.png" alt="image-20240502220404765" style="zoom: 50%;" /></p>
 
-<h3 id="code阶段服务器01安装gitlab19216811101">CODE阶段—&gt;服务器01安装Gitlab（192.168.11.101）</h3>
+<h3 id="code-阶段服务器-01-安装-gitlab19216811101">CODE 阶段—&gt;服务器 01 安装 Gitlab（192.168.11.101）</h3>
 
-<p>利用docker环境：先安装Docker 和 Docker-Compose</p>
+<p>利用 docker 环境：先安装 Docker 和 Docker-Compose</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 服务器01安装Gitlab</span>
 docker version
@@ -258,7 +258,7 @@ systemctl restart docker
 docker-compose logs <span class="nt">-f</span> <span class="c"># 可通过浏览器访问192.168.11.101:8929查看gitlab</span>
 </code></pre></div></div>
 
-<p>编辑docker-compose.yml文件，设置为docker启动就会让gitlab启动</p>
+<p>编辑 docker-compose.yml 文件，设置为 docker 启动就会让 gitlab 启动</p>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1'</span>
 <span class="na">services</span><span class="pi">:</span>
@@ -279,14 +279,14 @@ docker-compose logs <span class="nt">-f</span> <span class="c"># 可通过浏览
    <span class="pi">-</span> <span class="s1">'</span><span class="s">./data:/var/opt/gitlab'</span>
 </code></pre></div></div>
 
-<p>进入docker中的gitlab镜像编辑：</p>
+<p>进入 docker 中的 gitlab 镜像编辑：</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker <span class="nb">exec</span> <span class="nt">-it</span> gitlab bash
 <span class="nb">cat</span> /etc/gitlab/initial_root_password <span class="c">#找到gitlab密码，在浏览器中修改</span>
 <span class="c"># 在gitlab中创建新仓库，用于开发推送</span>
 </code></pre></div></div>
 
-<h3 id="build阶段服务器02安装mavenjdk19216811102">BUILD阶段—&gt;服务器02安装Maven，JDK（192.168.11.102）</h3>
+<h3 id="build-阶段服务器-02-安装-mavenjdk19216811102">BUILD 阶段—&gt;服务器 02 安装 Maven，JDK（192.168.11.102）</h3>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Tip 修改虚拟机ip地址 超级模式下：</span>
 nano /etc/sysconfig/network-scripts/ifcfg-ens33
@@ -301,20 +301,20 @@ systemctl restart network
 </code></pre></div></div>
 
 <div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">&lt;profile&gt;</span>
- <span class="s">&lt;id&gt;jdk8&lt;/id&gt;</span>
- <span class="s">&lt;activation&gt;</span>
-  <span class="s">&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span>
-  <span class="s">&lt;jdk&gt;1.8&lt;/jdk&gt;</span>
- <span class="s">&lt;/activation&gt;</span>
- <span class="s">&lt;properties&gt;</span>
-  <span class="s">&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span>
-  <span class="s">&lt;maven.compiler,target&gt;1.8&lt;/maven.compiler.target&gt;</span>
-  <span class="s">&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span>
- <span class="s">&lt;/properties&gt;</span>
+<span class="s">&lt;id&gt;jdk8&lt;/id&gt;</span>
+<span class="s">&lt;activation&gt;</span>
+<span class="s">&lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</span>
+<span class="s">&lt;jdk&gt;1.8&lt;/jdk&gt;</span>
+<span class="s">&lt;/activation&gt;</span>
+<span class="s">&lt;properties&gt;</span>
+<span class="s">&lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;</span>
+<span class="s">&lt;maven.compiler,target&gt;1.8&lt;/maven.compiler.target&gt;</span>
+<span class="s">&lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;</span>
+<span class="s">&lt;/properties&gt;</span>
 <span class="s">&lt;/profile&gt;</span>
 </code></pre></div></div>
 
-<h3 id="operate阶段服务器02安装docker">OPERATE阶段—&gt;服务器02安装Docker</h3>
+<h3 id="operate-阶段服务器-02-安装-docker">OPERATE 阶段—&gt;服务器 02 安装 Docker</h3>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 安装Docker</span>
 docker <span class="nb">install</span> <span class="c"># 各种方法</span>
@@ -326,14 +326,14 @@ docker version <span class="c"># 确定安装成功</span>
 docker-cmopose version
 </code></pre></div></div>
 
-<h3 id="integrate阶段服务器02安装jenkins">INTEGRATE阶段—&gt;服务器02安装Jenkins</h3>
+<h3 id="integrate-阶段服务器-02-安装-jenkins">INTEGRATE 阶段—&gt;服务器 02 安装 Jenkins</h3>
 
-<p><img src="/site/img/in-post/CICD/image-20240502225544686.png" alt="image-20240502225544686" style="zoom: 50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502225544686.png" alt="image-20240502225544686" style="zoom: 50%;" /></p>
 
-<p><strong>CI可以理解为：Jenkins将代码拉取、构建、制作镜像交给测试人员测试。</strong>
+<p><strong>CI 可以理解为：Jenkins 将代码拉取、构建、制作镜像交给测试人员测试。</strong>
 <strong>持续集成：将代码持续的集成到主干上，并自动构建和测试</strong></p>
 
-<p><strong>CD可以理解为：通过Jenkins将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。</strong>
+<p><strong>CD 可以理解为：通过 Jenkins 将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。</strong>
 <strong>持续交付：让经过持续集成的代码可以进行手动部署。</strong>
 <strong>持续部署：让可以持续交付的代码随时随地的自动化部署</strong></p>
 
@@ -350,21 +350,21 @@ docker logs <span class="nt">-f</span> jenkins <span class="c"># 获取密码</s
 <span class="c"># Git parameter &amp; Publish over SSH</span>
 </code></pre></div></div>
 
-<p>编辑docker-compose.yml</p>
+<p>编辑 docker-compose.yml</p>
 
-<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s1">'</span><span class="s">3.1'</span>
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">3.1"</span>
 <span class="na">services</span><span class="pi">:</span>
- <span class="na">jenkins</span><span class="pi">:</span>
-  <span class="na">image</span><span class="pi">:</span> <span class="s1">'</span><span class="s">jenkins/jenkins:version-number'</span>  <span class="c1"># 镜像名称</span>
-  <span class="na">container-name</span><span class="pi">:</span> <span class="s">jenkins</span> <span class="c1"># 容器名称</span>
-  <span class="na">ports</span><span class="pi">:</span>
-   <span class="pi">-</span> <span class="s1">'</span><span class="s">8080:8080'</span>
-   <span class="pi">-</span> <span class="s1">'</span><span class="s">50000:50000'</span>
-  <span class="na">volumes</span><span class="pi">:</span>
-   <span class="pi">-</span> <span class="s1">'</span><span class="s">./data/:/var/jenkins_home/'</span> <span class="c1"># 前面是宿主机，后面是镜像中项目和插件的位置</span>
+  <span class="na">jenkins</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s2">"</span><span class="s">jenkins/jenkins:version-number"</span> <span class="c1"># 镜像名称</span>
+    <span class="na">container-name</span><span class="pi">:</span> <span class="s">jenkins</span> <span class="c1"># 容器名称</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8080:8080"</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">50000:50000"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">./data/:/var/jenkins_home/"</span> <span class="c1"># 前面是宿主机，后面是镜像中项目和插件的位置</span>
 </code></pre></div></div>
 
-<p>将jdk和maven移动到jenkins的data目录下</p>
+<p>将 jdk 和 maven 移动到 jenkins 的 data 目录下</p>
 
 <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> /usr/local/docker/jenkins_docker/data
 <span class="nb">mv</span> /usr/local/jdk/ ./
@@ -373,23 +373,23 @@ docker logs <span class="nt">-f</span> jenkins <span class="c"># 获取密码</s
 </code></pre></div></div>
 
 <p>在浏览器中全局设置中设置
-<img src="/site/img/in-post/CICD/image-20240502231938967.png" alt="image-20240502231938967" style="zoom: 50%;" /><img src="/site/img/in-post/CICD/image-20240502232009886.png" alt="image-20240502232009886" style="zoom:50%;" /></p>
+<img src="/img/in-post/CICD/image-20240502231938967.png" alt="image-20240502231938967" style="zoom: 50%;" /><img src="/img/in-post/CICD/image-20240502232009886.png" alt="image-20240502232009886" style="zoom:50%;" /></p>
 
 <p>在浏览器中系统设置中设置，发布地址</p>
 
-<p><img src="/site/img/in-post/CICD/image-20240502232213345.png" alt="image-20240502232213345" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502232213345.png" alt="image-20240502232213345" style="zoom:50%;" /></p>
 
-<h3 id="ci过程">CI过程</h3>
+<h3 id="ci-过程">CI 过程</h3>
 
-<h4 id="创建git仓库并推送代码">创建git仓库并推送代码</h4>
+<h4 id="创建-git-仓库并推送代码">创建 git 仓库并推送代码</h4>
 
-<h4 id="通过freestyle-project设置jenkins">通过Freestyle Project设置Jenkins</h4>
+<h4 id="通过-freestyle-project-设置-jenkins">通过 Freestyle Project 设置 Jenkins</h4>
 
-<p><img src="/site/img/in-post/CICD/image-20240502234148371.png" alt="image-20240502234148371" style="zoom: 33%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502234148371.png" alt="image-20240502234148371" style="zoom: 33%;" /></p>
 
 <h4 id="build-now">Build now</h4>
 
-<p>拉取到jenkins</p>
+<p>拉取到 jenkins</p>
 
 <h4 id="configure">Configure</h4>
 
@@ -397,41 +397,41 @@ docker logs <span class="nt">-f</span> jenkins <span class="c"># 获取密码</s
 
 <h5 id="add-build-step-invoke-top-level-maven-targets">Add build step: Invoke top-level Maven targets</h5>
 
-<p><img src="/site/img/in-post/CICD/image-20240502234509415.png" alt="image-20240502234509415" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502234509415.png" alt="image-20240502234509415" style="zoom:50%;" /></p>
 
 <h5 id="post-build-actions">Post-build-actions</h5>
 
-<p><img src="/site/img/in-post/CICD/image-20240502234826480.png" alt="image-20240502234826480" style="zoom:50%;" /><img src="/site/img/in-post/CICD/image-20240502234714055.png" alt="image-20240502234714055" style="zoom: 33%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502234826480.png" alt="image-20240502234826480" style="zoom:50%;" /><img src="/img/in-post/CICD/image-20240502234714055.png" alt="image-20240502234714055" style="zoom: 33%;" /></p>
 
-<h5 id="构建docker镜像">构建docker镜像</h5>
+<h5 id="构建-docker-镜像">构建 docker 镜像</h5>
 
-<p><img src="/site/img/in-post/CICD/image-20240502235646353.png" alt="image-20240502235646353" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502235646353.png" alt="image-20240502235646353" style="zoom:50%;" /></p>
 
-<h5 id="构建docker-yml文件">构建docker yml文件</h5>
+<h5 id="构建-docker-yml-文件">构建 docker yml 文件</h5>
 
-<p><img src="/site/img/in-post/CICD/image-20240503000622131.png" alt="image-20240503000622131" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240503000622131.png" alt="image-20240503000622131" style="zoom:50%;" /></p>
 
-<h4 id="jenkins拉取文件汇总">jenkins拉取文件汇总</h4>
+<h4 id="jenkins-拉取文件汇总">jenkins 拉取文件汇总</h4>
 
-<p><img src="/site/img/in-post/CICD/image-20240502235929210.png" alt="image-20240502235929210" style="zoom: 67%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240502235929210.png" alt="image-20240502235929210" style="zoom: 67%;" /></p>
 
 <h4 id="自动构建后执行">自动构建后执行</h4>
 
-<p><img src="/site/img/in-post/CICD/image.jpeg" alt="image-20240503000356685" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image.jpeg" alt="image-20240503000356685" style="zoom:50%;" /></p>
 
 <h4 id="查看效果">查看效果</h4>
 
-<p><img src="/site/img/in-post/CICD/image-20240503000701444.png" alt="image-20240503000701444" /></p>
+<p><img src="/img/in-post/CICD/image-20240503000701444.png" alt="image-20240503000701444" /></p>
 
-<h3 id="cd过程">CD过程</h3>
+<h3 id="cd-过程">CD 过程</h3>
 
-<p>通过Git parameter 根据tag进行拉取</p>
+<p>通过 Git parameter 根据 tag 进行拉取</p>
 
-<p><img src="/site/img/in-post/CICD/image-20240503001605031.png" alt="image-20240503001605031" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240503001605031.png" alt="image-20240503001605031" style="zoom:50%;" /></p>
 
-<p>根据tag进行检查</p>
+<p>根据 tag 进行检查</p>
 
-<p><img src="/site/img/in-post/CICD/image-20240503001643591.png" alt="image-20240503001643591" style="zoom:50%;" /></p>
+<p><img src="/img/in-post/CICD/image-20240503001643591.png" alt="image-20240503001643591" style="zoom:50%;" /></p>
 
 <h3 id="sonarqube">SonarQube</h3>
 
@@ -520,7 +520,7 @@ docker logs <span class="nt">-f</span> jenkins <span class="c"># 获取密码</s
             <a
               href="/tags/#Life"
               title="Life"
-              rel="2"
+              rel="3"
             >
               Life
             </a>

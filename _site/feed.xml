@@ -5,9 +5,48 @@
     <description>一个小白的日常记录</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 25 May 2025 23:34:08 +0900</pubDate>
-    <lastBuildDate>Sun, 25 May 2025 23:34:08 +0900</lastBuildDate>
+    <pubDate>Fri, 30 May 2025 22:49:23 +0900</pubDate>
+    <lastBuildDate>Fri, 30 May 2025 22:49:23 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>Work Out and Sleep Record</title>
+        <description>&lt;h1 id=&quot;work-out-and-sleep-record&quot;&gt;Work Out and Sleep Record&lt;/h1&gt;
+
+&lt;h2 id=&quot;5-月&quot;&gt;5 月&lt;/h2&gt;
+
+&lt;p&gt;5/25 周日 上午，爬坡一小时，坡度 13，速度 4.5
+卧推，大概是空杆 20 可以做组，30 稍微艰难一点&lt;/p&gt;
+
+&lt;p&gt;5/26 周一 夜，爬坡一小时，坡度 14，速度 4.5
+腹部，做了几组撑杆抬腿，&lt;/p&gt;
+
+&lt;p&gt;5/27 周二 晨，爬坡半小时，坡度 8，速度 4，
+晚上又累又困，不行了就九点半就睡了，
+21:30 ～ 7:30&lt;/p&gt;
+
+&lt;p&gt;5/28 周三 夜，爬坡 75 分钟，坡度 12，速度 4.5
+二头 空杆不知多重，加了 5 公斤和 10 公斤，10 能做几个，5 能做组（吗？）&lt;/p&gt;
+
+&lt;p&gt;5/29 周四 夜
+00:00 ～ 7:40&lt;/p&gt;
+
+&lt;p&gt;5/30 周五 夜，爬坡 60 分钟，坡度 13，速度 4.5-4.0
+跑步 15 分钟，速度 7.5，今天控心率控在 154 左右
+被说了，好像还是慢跑更减脂一点，那么 6 月开始跑步吧~&lt;/p&gt;
+
+&lt;p&gt;5/31 周六&lt;/p&gt;
+
+&lt;h2 id=&quot;6-月&quot;&gt;6 月&lt;/h2&gt;
+</description>
+        <pubDate>Sat, 31 May 2025 05:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</guid>
+        
+        <category>Life</category>
+        
+        
+      </item>
     
       <item>
         <title>Java与Spring学习</title>
@@ -966,9 +1005,9 @@ Objective instanceof Student; true&lt;/p&gt;
 
 &lt;p&gt;想起我高中的时候，我爸给我买了一把雅马哈的吉他。那把木吉他是用一个麻布质袋子包装的，上面写着 Fender。我一开始很好奇，为什么这把快到一千的木吉他，不配拥有一个自己的雅马哈的袋子。我查了一下 fender 是是什么垃圾牌子，如果以车来类比的话，我发现 fender 就是吉他界的奔驰。所以我那时候就开始想，长大了一定要买一把自己的 fender。于是上周末在日本的 Fender 旗舰店买了玩家二代，我的第一把电贝司。距离那天可能已经快 10 年了，我终于有了一把自己的 fender。&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/工作有感/fender.jpg&quot; alt=&quot;fender&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/work-feeling/fender.jpg&quot; alt=&quot;fender&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/work-feeling/梁龙.jpg&quot; alt=&quot;梁龙&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/work-feeling/梁龙.jpg&quot; alt=&quot;梁龙&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;同时在 Fender 旗舰店也看到了龙姨的照片。果然是死亡摇滚。&lt;/p&gt;
 
@@ -2343,15 +2382,15 @@ Objective instanceof Student; true&lt;/p&gt;
 
 &lt;h2 id=&quot;软件开发过程设计工具&quot;&gt;软件开发过程&amp;amp;设计工具&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/devops.png&quot; alt=&quot;image-20240502231443039&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/devops.png&quot; alt=&quot;image-20240502231443039&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;cicd持续集成和持续部署过程学习&quot;&gt;CI/CD(持续集成和持续部署过程学习)&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502220404765.png&quot; alt=&quot;image-20240502220404765&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502220404765.png&quot; alt=&quot;image-20240502220404765&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;code阶段服务器01安装gitlab19216811101&quot;&gt;CODE阶段—&amp;gt;服务器01安装Gitlab（192.168.11.101）&lt;/h3&gt;
+&lt;h3 id=&quot;code-阶段服务器-01-安装-gitlab19216811101&quot;&gt;CODE 阶段—&amp;gt;服务器 01 安装 Gitlab（192.168.11.101）&lt;/h3&gt;
 
-&lt;p&gt;利用docker环境：先安装Docker 和 Docker-Compose&lt;/p&gt;
+&lt;p&gt;利用 docker 环境：先安装 Docker 和 Docker-Compose&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 服务器01安装Gitlab&lt;/span&gt;
 docker version
@@ -2369,7 +2408,7 @@ systemctl restart docker
 docker-compose logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 可通过浏览器访问192.168.11.101:8929查看gitlab&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;编辑docker-compose.yml文件，设置为docker启动就会让gitlab启动&lt;/p&gt;
+&lt;p&gt;编辑 docker-compose.yml 文件，设置为 docker 启动就会让 gitlab 启动&lt;/p&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.1&apos;&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
@@ -2390,14 +2429,14 @@ docker-compose logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; &lt;span cl
    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./data:/var/opt/gitlab&apos;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;进入docker中的gitlab镜像编辑：&lt;/p&gt;
+&lt;p&gt;进入 docker 中的 gitlab 镜像编辑：&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;docker &lt;span class=&quot;nb&quot;&gt;exec&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-it&lt;/span&gt; gitlab bash
 &lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/gitlab/initial_root_password &lt;span class=&quot;c&quot;&gt;#找到gitlab密码，在浏览器中修改&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# 在gitlab中创建新仓库，用于开发推送&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;build阶段服务器02安装mavenjdk19216811102&quot;&gt;BUILD阶段—&amp;gt;服务器02安装Maven，JDK（192.168.11.102）&lt;/h3&gt;
+&lt;h3 id=&quot;build-阶段服务器-02-安装-mavenjdk19216811102&quot;&gt;BUILD 阶段—&amp;gt;服务器 02 安装 Maven，JDK（192.168.11.102）&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Tip 修改虚拟机ip地址 超级模式下：&lt;/span&gt;
 nano /etc/sysconfig/network-scripts/ifcfg-ens33
@@ -2412,20 +2451,20 @@ systemctl restart network
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&amp;lt;profile&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&amp;lt;id&amp;gt;jdk8&amp;lt;/id&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&amp;lt;activation&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&amp;lt;jdk&amp;gt;1.8&amp;lt;/jdk&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&amp;lt;/activation&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler.source&amp;gt;1.8&amp;lt;/maven.compiler.source&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler,target&amp;gt;1.8&amp;lt;/maven.compiler.target&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler.compilerVersion&amp;gt;1.8&amp;lt;/maven.compiler.compilerVersion&amp;gt;&lt;/span&gt;
- &lt;span class=&quot;s&quot;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;id&amp;gt;jdk8&amp;lt;/id&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;activation&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;jdk&amp;gt;1.8&amp;lt;/jdk&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;/activation&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;properties&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler.source&amp;gt;1.8&amp;lt;/maven.compiler.source&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler,target&amp;gt;1.8&amp;lt;/maven.compiler.target&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;maven.compiler.compilerVersion&amp;gt;1.8&amp;lt;/maven.compiler.compilerVersion&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;&amp;lt;/properties&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;&amp;lt;/profile&amp;gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;operate阶段服务器02安装docker&quot;&gt;OPERATE阶段—&amp;gt;服务器02安装Docker&lt;/h3&gt;
+&lt;h3 id=&quot;operate-阶段服务器-02-安装-docker&quot;&gt;OPERATE 阶段—&amp;gt;服务器 02 安装 Docker&lt;/h3&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 安装Docker&lt;/span&gt;
 docker &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 各种方法&lt;/span&gt;
@@ -2437,14 +2476,14 @@ docker version &lt;span class=&quot;c&quot;&gt;# 确定安装成功&lt;/span&gt;
 docker-cmopose version
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;h3 id=&quot;integrate阶段服务器02安装jenkins&quot;&gt;INTEGRATE阶段—&amp;gt;服务器02安装Jenkins&lt;/h3&gt;
+&lt;h3 id=&quot;integrate-阶段服务器-02-安装-jenkins&quot;&gt;INTEGRATE 阶段—&amp;gt;服务器 02 安装 Jenkins&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502225544686.png&quot; alt=&quot;image-20240502225544686&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502225544686.png&quot; alt=&quot;image-20240502225544686&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;CI可以理解为：Jenkins将代码拉取、构建、制作镜像交给测试人员测试。&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;CI 可以理解为：Jenkins 将代码拉取、构建、制作镜像交给测试人员测试。&lt;/strong&gt;
 &lt;strong&gt;持续集成：将代码持续的集成到主干上，并自动构建和测试&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;CD可以理解为：通过Jenkins将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。&lt;/strong&gt;
+&lt;p&gt;&lt;strong&gt;CD 可以理解为：通过 Jenkins 将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。&lt;/strong&gt;
 &lt;strong&gt;持续交付：让经过持续集成的代码可以进行手动部署。&lt;/strong&gt;
 &lt;strong&gt;持续部署：让可以持续交付的代码随时随地的自动化部署&lt;/strong&gt;&lt;/p&gt;
 
@@ -2461,21 +2500,21 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;span class=&quot;c&quot;&gt;# Git parameter &amp;amp; Publish over SSH&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;编辑docker-compose.yml&lt;/p&gt;
+&lt;p&gt;编辑 docker-compose.yml&lt;/p&gt;
 
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.1&apos;&lt;/span&gt;
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;version&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;3.1&quot;&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;services&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;jenkins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;jenkins/jenkins:version-number&apos;&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# 镜像名称&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;container-name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jenkins&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 容器名称&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;8080:8080&apos;&lt;/span&gt;
-   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;50000:50000&apos;&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-   &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./data/:/var/jenkins_home/&apos;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 前面是宿主机，后面是镜像中项目和插件的位置&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;jenkins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;jenkins/jenkins:version-number&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 镜像名称&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;container-name&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jenkins&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 容器名称&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;ports&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;8080:8080&quot;&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;50000:50000&quot;&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;volumes&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;./data/:/var/jenkins_home/&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 前面是宿主机，后面是镜像中项目和插件的位置&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;将jdk和maven移动到jenkins的data目录下&lt;/p&gt;
+&lt;p&gt;将 jdk 和 maven 移动到 jenkins 的 data 目录下&lt;/p&gt;
 
 &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /usr/local/docker/jenkins_docker/data
 &lt;span class=&quot;nb&quot;&gt;mv&lt;/span&gt; /usr/local/jdk/ ./
@@ -2484,23 +2523,23 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;在浏览器中全局设置中设置
-&lt;img src=&quot;/site/img/in-post/CICD/image-20240502231938967.png&quot; alt=&quot;image-20240502231938967&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502232009886.png&quot; alt=&quot;image-20240502232009886&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/img/in-post/CICD/image-20240502231938967.png&quot; alt=&quot;image-20240502231938967&quot; style=&quot;zoom: 50%;&quot; /&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502232009886.png&quot; alt=&quot;image-20240502232009886&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;在浏览器中系统设置中设置，发布地址&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502232213345.png&quot; alt=&quot;image-20240502232213345&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502232213345.png&quot; alt=&quot;image-20240502232213345&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;ci过程&quot;&gt;CI过程&lt;/h3&gt;
+&lt;h3 id=&quot;ci-过程&quot;&gt;CI 过程&lt;/h3&gt;
 
-&lt;h4 id=&quot;创建git仓库并推送代码&quot;&gt;创建git仓库并推送代码&lt;/h4&gt;
+&lt;h4 id=&quot;创建-git-仓库并推送代码&quot;&gt;创建 git 仓库并推送代码&lt;/h4&gt;
 
-&lt;h4 id=&quot;通过freestyle-project设置jenkins&quot;&gt;通过Freestyle Project设置Jenkins&lt;/h4&gt;
+&lt;h4 id=&quot;通过-freestyle-project-设置-jenkins&quot;&gt;通过 Freestyle Project 设置 Jenkins&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502234148371.png&quot; alt=&quot;image-20240502234148371&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502234148371.png&quot; alt=&quot;image-20240502234148371&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;build-now&quot;&gt;Build now&lt;/h4&gt;
 
-&lt;p&gt;拉取到jenkins&lt;/p&gt;
+&lt;p&gt;拉取到 jenkins&lt;/p&gt;
 
 &lt;h4 id=&quot;configure&quot;&gt;Configure&lt;/h4&gt;
 
@@ -2508,41 +2547,41 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 
 &lt;h5 id=&quot;add-build-step-invoke-top-level-maven-targets&quot;&gt;Add build step: Invoke top-level Maven targets&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502234509415.png&quot; alt=&quot;image-20240502234509415&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502234509415.png&quot; alt=&quot;image-20240502234509415&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h5 id=&quot;post-build-actions&quot;&gt;Post-build-actions&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502234826480.png&quot; alt=&quot;image-20240502234826480&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502234714055.png&quot; alt=&quot;image-20240502234714055&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502234826480.png&quot; alt=&quot;image-20240502234826480&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502234714055.png&quot; alt=&quot;image-20240502234714055&quot; style=&quot;zoom: 33%;&quot; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;构建docker镜像&quot;&gt;构建docker镜像&lt;/h5&gt;
+&lt;h5 id=&quot;构建-docker-镜像&quot;&gt;构建 docker 镜像&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502235646353.png&quot; alt=&quot;image-20240502235646353&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502235646353.png&quot; alt=&quot;image-20240502235646353&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;h5 id=&quot;构建docker-yml文件&quot;&gt;构建docker yml文件&lt;/h5&gt;
+&lt;h5 id=&quot;构建-docker-yml-文件&quot;&gt;构建 docker yml 文件&lt;/h5&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240503000622131.png&quot; alt=&quot;image-20240503000622131&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240503000622131.png&quot; alt=&quot;image-20240503000622131&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;h4 id=&quot;jenkins拉取文件汇总&quot;&gt;jenkins拉取文件汇总&lt;/h4&gt;
+&lt;h4 id=&quot;jenkins-拉取文件汇总&quot;&gt;jenkins 拉取文件汇总&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240502235929210.png&quot; alt=&quot;image-20240502235929210&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240502235929210.png&quot; alt=&quot;image-20240502235929210&quot; style=&quot;zoom: 67%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;自动构建后执行&quot;&gt;自动构建后执行&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image.jpeg&quot; alt=&quot;image-20240503000356685&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image.jpeg&quot; alt=&quot;image-20240503000356685&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h4 id=&quot;查看效果&quot;&gt;查看效果&lt;/h4&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240503000701444.png&quot; alt=&quot;image-20240503000701444&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240503000701444.png&quot; alt=&quot;image-20240503000701444&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;cd过程&quot;&gt;CD过程&lt;/h3&gt;
+&lt;h3 id=&quot;cd-过程&quot;&gt;CD 过程&lt;/h3&gt;
 
-&lt;p&gt;通过Git parameter 根据tag进行拉取&lt;/p&gt;
+&lt;p&gt;通过 Git parameter 根据 tag 进行拉取&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240503001605031.png&quot; alt=&quot;image-20240503001605031&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240503001605031.png&quot; alt=&quot;image-20240503001605031&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;根据tag进行检查&lt;/p&gt;
+&lt;p&gt;根据 tag 进行检查&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/site/img/in-post/CICD/image-20240503001643591.png&quot; alt=&quot;image-20240503001643591&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/img/in-post/CICD/image-20240503001643591.png&quot; alt=&quot;image-20240503001643591&quot; style=&quot;zoom:50%;&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;sonarqube&quot;&gt;SonarQube&lt;/h3&gt;
 

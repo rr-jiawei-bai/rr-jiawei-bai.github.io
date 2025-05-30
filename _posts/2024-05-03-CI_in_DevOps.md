@@ -1,29 +1,29 @@
 ---
-layout:     post
-title:      "DevOps中的CI"
-subtitle:   "DevOps，CI"
-date:       2024-05-03
-author:     "Jiawei Bai"
+layout: post
+title: "DevOps中的CI"
+subtitle: "DevOps，CI"
+date: 2024-05-03
+author: "Jiawei Bai"
 header-img: "img/in-post/CICD/devops.png"
-catalog:    true
+catalog: true
 tags:
-    - DevOps
-    - CI/CD
+  - DevOps
+  - CI/CD
 ---
 
 # DevOps
 
 ## 软件开发过程&设计工具
 
-<img src="/site/img/in-post/CICD/devops.png" alt="image-20240502231443039"/>
+<img src="/img/in-post/CICD/devops.png" alt="image-20240502231443039"/>
 
 ### CI/CD(持续集成和持续部署过程学习)
 
-<img src="/site/img/in-post/CICD/image-20240502220404765.png" alt="image-20240502220404765" style="zoom: 50%;" />
+<img src="/img/in-post/CICD/image-20240502220404765.png" alt="image-20240502220404765" style="zoom: 50%;" />
 
-### CODE阶段—>服务器01安装Gitlab（192.168.11.101）
+### CODE 阶段—>服务器 01 安装 Gitlab（192.168.11.101）
 
-利用docker环境：先安装Docker 和 Docker-Compose
+利用 docker 环境：先安装 Docker 和 Docker-Compose
 
 ```shell
 # 服务器01安装Gitlab
@@ -42,7 +42,7 @@ systemctl restart docker
 docker-compose logs -f # 可通过浏览器访问192.168.11.101:8929查看gitlab
 ```
 
-编辑docker-compose.yml文件，设置为docker启动就会让gitlab启动
+编辑 docker-compose.yml 文件，设置为 docker 启动就会让 gitlab 启动
 
 ```yml
 version: '3.1'
@@ -64,7 +64,7 @@ services:
    - './data:/var/opt/gitlab'
 ```
 
-进入docker中的gitlab镜像编辑：
+进入 docker 中的 gitlab 镜像编辑：
 
 ```shell
 docker exec -it gitlab bash
@@ -72,7 +72,7 @@ cat /etc/gitlab/initial_root_password #找到gitlab密码，在浏览器中修�
 # 在gitlab中创建新仓库，用于开发推送
 ```
 
-### BUILD阶段—>服务器02安装Maven，JDK（192.168.11.102）
+### BUILD 阶段—>服务器 02 安装 Maven，JDK（192.168.11.102）
 
 ```shell
 # Tip 修改虚拟机ip地址 超级模式下：
@@ -90,20 +90,20 @@ cd maven && nano conf/settings.xml # 设置maven 的阿里云镜像
 
 ```yml
 <profile>
- <id>jdk8</id>
- <activation>
-  <activeByDefault>true</activeByDefault>
-  <jdk>1.8</jdk>
- </activation>
- <properties>
-  <maven.compiler.source>1.8</maven.compiler.source>
-  <maven.compiler,target>1.8</maven.compiler.target>
-  <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
- </properties>
+<id>jdk8</id>
+<activation>
+<activeByDefault>true</activeByDefault>
+<jdk>1.8</jdk>
+</activation>
+<properties>
+<maven.compiler.source>1.8</maven.compiler.source>
+<maven.compiler,target>1.8</maven.compiler.target>
+<maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
+</properties>
 </profile>
 ```
 
-### OPERATE阶段—>服务器02安装Docker
+### OPERATE 阶段—>服务器 02 安装 Docker
 
 ```shell
 # 安装Docker
@@ -116,14 +116,14 @@ docker version # 确定安装成功
 docker-cmopose version
 ```
 
-### INTEGRATE阶段—>服务器02安装Jenkins
+### INTEGRATE 阶段—>服务器 02 安装 Jenkins
 
-<img src="/site/img/in-post/CICD/image-20240502225544686.png" alt="image-20240502225544686" style="zoom: 50%;" />
+<img src="/img/in-post/CICD/image-20240502225544686.png" alt="image-20240502225544686" style="zoom: 50%;" />
 
-**CI可以理解为：Jenkins将代码拉取、构建、制作镜像交给测试人员测试。**
+**CI 可以理解为：Jenkins 将代码拉取、构建、制作镜像交给测试人员测试。**
 **持续集成：将代码持续的集成到主干上，并自动构建和测试**
 
-**CD可以理解为：通过Jenkins将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。**
+**CD 可以理解为：通过 Jenkins 将打包好标签的发行版本代码拉取、构建、制作镜像交给运维人员部署。**
 **持续交付：让经过持续集成的代码可以进行手动部署。**
 **持续部署：让可以持续交付的代码随时随地的自动化部署**
 
@@ -141,22 +141,22 @@ docker logs -f jenkins # 获取密码
 # Git parameter & Publish over SSH
 ```
 
-编辑docker-compose.yml
+编辑 docker-compose.yml
 
 ```yml
-version: '3.1'
+version: "3.1"
 services:
- jenkins:
-  image: 'jenkins/jenkins:version-number'  # 镜像名称
-  container-name: jenkins # 容器名称
-  ports:
-   - '8080:8080'
-   - '50000:50000'
-  volumes:
-   - './data/:/var/jenkins_home/' # 前面是宿主机，后面是镜像中项目和插件的位置
+  jenkins:
+    image: "jenkins/jenkins:version-number" # 镜像名称
+    container-name: jenkins # 容器名称
+    ports:
+      - "8080:8080"
+      - "50000:50000"
+    volumes:
+      - "./data/:/var/jenkins_home/" # 前面是宿主机，后面是镜像中项目和插件的位置
 ```
 
-将jdk和maven移动到jenkins的data目录下
+将 jdk 和 maven 移动到 jenkins 的 data 目录下
 
 ```shell
 cd /usr/local/docker/jenkins_docker/data
@@ -166,23 +166,23 @@ mv /usr/local/maven/ ./
 ```
 
 在浏览器中全局设置中设置
-<img src="/site/img/in-post/CICD/image-20240502231938967.png" alt="image-20240502231938967" style="zoom: 50%;" /><img src="/site/img/in-post/CICD/image-20240502232009886.png" alt="image-20240502232009886" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240502231938967.png" alt="image-20240502231938967" style="zoom: 50%;" /><img src="/img/in-post/CICD/image-20240502232009886.png" alt="image-20240502232009886" style="zoom:50%;" />
 
 在浏览器中系统设置中设置，发布地址
 
-<img src="/site/img/in-post/CICD/image-20240502232213345.png" alt="image-20240502232213345" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240502232213345.png" alt="image-20240502232213345" style="zoom:50%;" />
 
-### CI过程
+### CI 过程
 
-#### 创建git仓库并推送代码
+#### 创建 git 仓库并推送代码
 
-#### 通过Freestyle Project设置Jenkins
+#### 通过 Freestyle Project 设置 Jenkins
 
-<img src="/site/img/in-post/CICD/image-20240502234148371.png" alt="image-20240502234148371" style="zoom: 33%;" />
+<img src="/img/in-post/CICD/image-20240502234148371.png" alt="image-20240502234148371" style="zoom: 33%;" />
 
 #### Build now
 
-拉取到jenkins
+拉取到 jenkins
 
 #### Configure
 
@@ -190,41 +190,41 @@ mv /usr/local/maven/ ./
 
 ##### Add build step: Invoke top-level Maven targets
 
-<img src="/site/img/in-post/CICD/image-20240502234509415.png" alt="image-20240502234509415" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240502234509415.png" alt="image-20240502234509415" style="zoom:50%;" />
 
 ##### Post-build-actions
 
-<img src="/site/img/in-post/CICD/image-20240502234826480.png" alt="image-20240502234826480" style="zoom:50%;" /><img src="/site/img/in-post/CICD/image-20240502234714055.png" alt="image-20240502234714055" style="zoom: 33%;" />
+<img src="/img/in-post/CICD/image-20240502234826480.png" alt="image-20240502234826480" style="zoom:50%;" /><img src="/img/in-post/CICD/image-20240502234714055.png" alt="image-20240502234714055" style="zoom: 33%;" />
 
-##### 构建docker镜像
+##### 构建 docker 镜像
 
-<img src="/site/img/in-post/CICD/image-20240502235646353.png" alt="image-20240502235646353" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240502235646353.png" alt="image-20240502235646353" style="zoom:50%;" />
 
-##### 构建docker yml文件
+##### 构建 docker yml 文件
 
-<img src="/site/img/in-post/CICD/image-20240503000622131.png" alt="image-20240503000622131" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240503000622131.png" alt="image-20240503000622131" style="zoom:50%;" />
 
-#### jenkins拉取文件汇总
+#### jenkins 拉取文件汇总
 
-<img src="/site/img/in-post/CICD/image-20240502235929210.png" alt="image-20240502235929210" style="zoom: 67%;" />
+<img src="/img/in-post/CICD/image-20240502235929210.png" alt="image-20240502235929210" style="zoom: 67%;" />
 
 #### 自动构建后执行
 
-<img src="/site/img/in-post/CICD/image.jpeg" alt="image-20240503000356685" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image.jpeg" alt="image-20240503000356685" style="zoom:50%;" />
 
 #### 查看效果
 
-![image-20240503000701444](/site/img/in-post/CICD/image-20240503000701444.png)
+![image-20240503000701444](/img/in-post/CICD/image-20240503000701444.png)
 
-### CD过程
+### CD 过程
 
-通过Git parameter 根据tag进行拉取
+通过 Git parameter 根据 tag 进行拉取
 
-<img src="/site/img/in-post/CICD/image-20240503001605031.png" alt="image-20240503001605031" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240503001605031.png" alt="image-20240503001605031" style="zoom:50%;" />
 
-根据tag进行检查
+根据 tag 进行检查
 
-<img src="/site/img/in-post/CICD/image-20240503001643591.png" alt="image-20240503001643591" style="zoom:50%;" />
+<img src="/img/in-post/CICD/image-20240503001643591.png" alt="image-20240503001643591" style="zoom:50%;" />
 
 ### SonarQube
 
