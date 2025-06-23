@@ -3,11 +3,228 @@
   <channel>
     <title>JasonBai&apos;Blog</title>
     <description>一个小白的日常记录</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 30 May 2025 22:49:23 +0900</pubDate>
-    <lastBuildDate>Fri, 30 May 2025 22:49:23 +0900</lastBuildDate>
+    <link>https://jasonbai97.com/</link>
+    <atom:link href="https://jasonbai97.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 23 Jun 2025 23:20:54 +0900</pubDate>
+    <lastBuildDate>Mon, 23 Jun 2025 23:20:54 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>遇见的一些常用 git 命令</title>
+        <description>&lt;h1 id=&quot;遇见的一些常用-git-命令&quot;&gt;遇见的一些常用 git 命令&lt;/h1&gt;
+
+&lt;p&gt;不知不觉进组已经快 2 个月了。虽然以前也在 github 上上传过代码并进行维护，但是很多时候都是只对当前仓库不断的 add commit push。&lt;/p&gt;
+
+&lt;p&gt;而在实际工作中也遇到了很多有意思的 git 使用场景，今天就在这里做一个分享吧！&lt;/p&gt;
+
+&lt;h2 id=&quot;情景一&quot;&gt;情景一&lt;/h2&gt;
+
+&lt;p&gt;“小白，这是我们的工作仓库，你把这个克隆到本地，记得用 PAT”&lt;/p&gt;
+
+&lt;p&gt;“好的，我研究下什么是 PAT”&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 一般来说 我们这样克隆仓库&lt;/span&gt;
+git clone https://github.com/example/repo.git
+
+&lt;span class=&quot;c&quot;&gt;# 但是如果用PAT，就要在组织或者仓库中生成token，并通过token来拉取以及推送代码&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 安全方式：使用个人访问令牌(PAT)克隆私有仓库&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 注意：不要在命令行中硬编码PAT，推荐使用凭据助手或环境变量&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 方式一：临时使用环境变量&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;export &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;ghp_your_personal_access_token_here
+git clone &lt;span class=&quot;s2&quot;&gt;&quot;https://&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GITHUB_TOKEN&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;@github.com/example/private-repo.git&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 方式二：通过Git凭据助手存储PAT（推荐）&lt;/span&gt;
+git clone https://github.com/example/private-repo.git
+&lt;span class=&quot;c&quot;&gt;# 首次输入用户名后，密码字段输入PAT，Git会自动存储&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 企业版GitHub或GitLab使用示例&lt;/span&gt;
+git clone https://your_username:your_personal_access_token@gitlab.com/company/repo.git
+git clone https://your_username:your_personal_access_token@github.example.com/org/repo.git
+
+&lt;span class=&quot;c&quot;&gt;# 这个秘钥生成之后记得保存，看过一次就再也看不见了，除非重新生成&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 通过下面这个命令，我们可以看到当前仓库的远端地址&lt;/span&gt;
+git remote &lt;span class=&quot;nt&quot;&gt;-v&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;情景二&quot;&gt;情景二&lt;/h2&gt;
+
+&lt;p&gt;“小白，创建个新的特性分支，然后提交个 PR 我看看”&lt;/p&gt;
+
+&lt;p&gt;“好的，我先看看怎么创建新分支”&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 首先拉取仓库中的最新更新，防止有未更新到本地的代码&lt;/span&gt;
+git checkout main
+git pull origin main
+
+&lt;span class=&quot;c&quot;&gt;# 查看是否落后于远端分支&lt;/span&gt;
+git status
+
+&lt;span class=&quot;c&quot;&gt;# 查看所有分支，看看你想创建的那个特性分支是不是已经存在&lt;/span&gt;
+git branch &lt;span class=&quot;nt&quot;&gt;-a&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 首先在当前仓库中，创建个新分支，注意命名规范&lt;/span&gt;
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; feature/new_branch
+
+&lt;span class=&quot;c&quot;&gt;# 经过开发后，暂存改动的文件，-u是只暂存将经跟踪的文件&lt;/span&gt;
+git add &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 提交改动&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;new feature developed&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 最后就可以推送到远端然后生成pull request啦, -u是 --set-upstream 的缩写&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin feature/new_branch
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;情景三&quot;&gt;情景三&lt;/h2&gt;
+
+&lt;p&gt;“小白，（已经提交完了的时候）你别直接提交到这个分支，你新创建一个”&lt;/p&gt;
+
+&lt;p&gt;“好的老板，我马上撤销提交。。”&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 先把本地的代码保存到新的分支中去,这个操作会把当前分支上所有未保存的修改都带到新的分支里去&lt;/span&gt;
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; feature/new_branch
+
+&lt;span class=&quot;c&quot;&gt;# 还是一样的，经过开发后，暂存改动的文件，-u是只暂存将经跟踪的文件&lt;/span&gt;
+git add &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 提交改动&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;new feature developed&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 最后就可以推送到远端然后生成pull request啦, -u是 --set-upstream 的缩写&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; origin feature/new_branch
+
+&lt;span class=&quot;c&quot;&gt;# 然后，要对刚刚提交过的branch 进行退回&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 一般有两种方式，假如只是回退几个commit，那么可以用revert&lt;/span&gt;
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值1]
+
+&lt;span class=&quot;c&quot;&gt;# 上面哈希值的commit 不要了！&lt;/span&gt;
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值2]
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值3]
+...
+git revert &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值10]
+
+&lt;span class=&quot;c&quot;&gt;# 上面都不要了！&lt;/span&gt;
+git push
+
+&lt;span class=&quot;c&quot;&gt;# 然后你就会看见分支里的提交记录：提交了1,2,3，...9,10，不要的提交1,2,3，...9,10，太长了！&lt;/span&gt;
+
+
+&lt;span class=&quot;c&quot;&gt;# 第二种：什么！！我刚提交的10个commit都不要了，都要挪到新分支上去？？？&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 那就首先通过下面的命令查看提交记录&lt;/span&gt;
+git log
+
+&lt;span class=&quot;c&quot;&gt;# 找到10个提交以前的那个commit的提交哈希值，这个哈希值后面的所有提交都不要了&lt;/span&gt;
+git reset hard &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值0]
+
+&lt;span class=&quot;c&quot;&gt;# 推回远端仓库进行同步&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt; origin &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;分支名]
+
+&lt;span class=&quot;c&quot;&gt;# 然后远端仓库会变成：最新提交是哈希值1（后面没有任何内容）。但是git会记录你 reset hard和push force过，所以最好确认过了再用，因为如果其中有别人的提交就会全部丢失。直接回滚到指定的节点。但会到很干净。建议备份到新分支后再操作。&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;情景四&quot;&gt;情景四&lt;/h2&gt;
+
+&lt;p&gt;“小白，把 A 分支里刚才的两个 commit，提交到 B 里去”&lt;/p&gt;
+
+&lt;p&gt;“好的，我看看有什么提交”&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 先查看A分支的提交&lt;/span&gt;
+git checkout branch-A
+
+&lt;span class=&quot;c&quot;&gt;# 创建个临时分支来进行提交，下面命令是根据本地a来创建了临时的cherry pick分支&lt;/span&gt;
+git checkout &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; temp/cherry-pick branch-A
+
+&lt;span class=&quot;c&quot;&gt;# 拉取最新修改&lt;/span&gt;
+git pull  origin branch-A
+
+&lt;span class=&quot;c&quot;&gt;# 查看提交，用--oneline，查看更清晰&lt;/span&gt;
+git log &lt;span class=&quot;nt&quot;&gt;--oneline&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 找到两个指定的commit以及其哈希值&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 切换到B分支，并拉取最新的B内容&lt;/span&gt;
+git checkout branch-B
+git pull origin branch-B
+
+&lt;span class=&quot;c&quot;&gt;# 提交刚才看到的第一个commit&lt;/span&gt;
+git cherry-pick &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值1]
+
+&lt;span class=&quot;c&quot;&gt;# 处理冲突。。，&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 如果有冲突，看看有什么冲突&lt;/span&gt;
+git status
+
+	&lt;span class=&quot;c&quot;&gt;# 选项一，处理后就要当做新的commit 来提交&lt;/span&gt;
+	git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;提交了第一个commit，并且处理了一些冲突&quot;&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;# 选项二，这个commit 不要了，跳过当前提交继续&lt;/span&gt;
+	git cherry-pick &lt;span class=&quot;nt&quot;&gt;--skip&lt;/span&gt;
+	&lt;span class=&quot;c&quot;&gt;# 选项三，我也不知道怎么处理冲突，取消当前cherry-pick操作&lt;/span&gt;
+	git cherry-pick &lt;span class=&quot;nt&quot;&gt;--abort&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 提交刚才看到的第二个commit&lt;/span&gt;
+git cherry-pick &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;提交哈希值2]
+
+&lt;span class=&quot;c&quot;&gt;# 继续处理冲突。。没冲突，那就直接结束&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 推送&lt;/span&gt;
+git push origin branch-B
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;情景五很少发生但是发生在了我头上&quot;&gt;情景五（很少发生，但是发生在了我头上）&lt;/h2&gt;
+
+&lt;p&gt;“老板，我改名字了”&lt;/p&gt;
+
+&lt;p&gt;“什么，你改名字了？那把提交记录里的名字换成你的新名字吧”&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 先查看都有谁提交了什么commit&lt;/span&gt;
+git log &lt;span class=&quot;nt&quot;&gt;--pretty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;format:&lt;span class=&quot;s2&quot;&gt;&quot;%h %an %ae&quot;&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 改变最近n次的提交人的姓名和邮箱&lt;/span&gt;
+git rebase &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; HEAD~n
+
+&lt;span class=&quot;c&quot;&gt;# 在弹出的编辑器中，将需要修改的提交前的pick改为edit&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 保存退出后，依次对每个标记为edit的提交执行：&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;--amend&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--author&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;正确用户名 &amp;lt;正确邮箱@example.com&amp;gt;&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--no-edit&lt;/span&gt;
+git rebase &lt;span class=&quot;nt&quot;&gt;--continue&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# 处理下一个提交&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 所有提交修改完成后推送到远程&lt;/span&gt;
+git push &lt;span class=&quot;nt&quot;&gt;--force&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;情景六&quot;&gt;情景六&lt;/h2&gt;
+
+&lt;p&gt;vim 编辑器的一些常用命令&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 当进入vim编辑器时&lt;/span&gt;
+a &lt;span class=&quot;c&quot;&gt;# 在光标后进入插入模式&lt;/span&gt;
+i &lt;span class=&quot;c&quot;&gt;# 在光标处进入插入模式&lt;/span&gt;
+A &lt;span class=&quot;c&quot;&gt;# 在行末进入插入模式&lt;/span&gt;
+I &lt;span class=&quot;c&quot;&gt;# 在行首进入插入模式&lt;/span&gt;
+esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span&gt;
+: &lt;span class=&quot;c&quot;&gt;# 从命令模式进入底行命令模式&lt;/span&gt;
+	:wq &lt;span class=&quot;c&quot;&gt;# 保存并退出&lt;/span&gt;
+	:q! &lt;span class=&quot;c&quot;&gt;# 强制退出，不保存&lt;/span&gt;
+	:w  &lt;span class=&quot;c&quot;&gt;# 保存文件&lt;/span&gt;
+	:w 新文件名 &lt;span class=&quot;c&quot;&gt;# 保存为新文件&lt;/span&gt;
+	:x &lt;span class=&quot;c&quot;&gt;# 保存并退出，（等价于:wq）&lt;/span&gt;
+	:q &lt;span class=&quot;c&quot;&gt;# 退出（只能在没修改文件时）&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# 还有一些暂时用不上的命令&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 光标移动（命令模式）&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 文本编辑（命令模式）&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 搜索与替换&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Tue, 24 Jun 2025 08:16:47 +0900</pubDate>
+        <link>https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
+        
+        <category>DevOps</category>
+        
+        <category>Git</category>
+        
+        
+      </item>
     
       <item>
         <title>Work Out and Sleep Record</title>
@@ -40,8 +257,8 @@
 &lt;h2 id=&quot;6-月&quot;&gt;6 月&lt;/h2&gt;
 </description>
         <pubDate>Sat, 31 May 2025 05:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</guid>
+        <link>https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</guid>
         
         <category>Life</category>
         
@@ -971,8 +1188,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 25 May 2025 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
+        <link>https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
         
         <category>Java</category>
         
@@ -1020,8 +1237,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;那就在这里许个愿吧。&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 May 2025 03:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
+        <link>https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
         
         <category>Life</category>
         
@@ -1073,8 +1290,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;还有很多想说的想记下来的，这里就不赘述了，有时间开另一篇文章再详细记录吧。晚安。&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Jun 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/06/10/Life/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/06/10/Life/</guid>
+        <link>https://jasonbai97.com/2024/06/10/Life/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/06/10/Life/</guid>
         
         <category>Life</category>
         
@@ -2366,8 +2583,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;h2 id=&quot;第二部分结束&quot;&gt;第二部分结束&lt;/h2&gt;
 </description>
         <pubDate>Mon, 20 May 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/05/20/Leetcode/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/20/Leetcode/</guid>
+        <link>https://jasonbai97.com/2024/05/20/Leetcode/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/05/20/Leetcode/</guid>
         
         <category>Leetcode</category>
         
@@ -2588,8 +2805,8 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;h3 id=&quot;harbor&quot;&gt;Harbor&lt;/h3&gt;
 </description>
         <pubDate>Fri, 03 May 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/05/03/CI_in_DevOps/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/03/CI_in_DevOps/</guid>
+        <link>https://jasonbai97.com/2024/05/03/CI_in_DevOps/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/05/03/CI_in_DevOps/</guid>
         
         <category>DevOps</category>
         

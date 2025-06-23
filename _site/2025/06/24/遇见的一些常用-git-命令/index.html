@@ -14,7 +14,7 @@
   <meta name="theme-color" content="#000000" />
 
   <title>
-    Work Out and Sleep Record - Jiawei's blog
+    遇见的一些常用 git 命令 - Jiawei's blog
   </title>
 
   <!-- Favicon -->
@@ -23,7 +23,7 @@
   <!-- Canonical URL -->
   <link
     rel="canonical"
-    href="https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/"
+    href="https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/"
   />
 
   <!-- Bootstrap Core CSS -->
@@ -171,8 +171,8 @@
   header.intro-header{
       position: relative;
       background-image:
-      /* url('img/in-post/Workout/IMG_6833.JPG'); */
-      url('/img/in-post/Workout/IMG_6833.JPG');
+      /* url('img/in-post/Git/Git.png'); */
+      url('/img/in-post/Git/Git.png');
   }
 
   
@@ -187,15 +187,22 @@
             
             <a
               class="tag"
-              href="/tags/#Life"
-              title="Life"
-              >Life</a
+              href="/tags/#DevOps"
+              title="DevOps"
+              >DevOps</a
+            >
+            
+            <a
+              class="tag"
+              href="/tags/#Git"
+              title="Git"
+              >Git</a
             >
             
           </div>
-          <h1>Work Out and Sleep Record</h1>
+          <h1>遇见的一些常用 git 命令</h1>
            
-          <h2 class="subheading">记录生活</h2>
+          <h2 class="subheading">Git command practice.</h2>
           
           <span id="busuanzi_container_page_pv"
             >Views:&nbsp;<span id="busuanzi_value_page_pv"></span
@@ -203,7 +210,7 @@
           >
           
           <span class="meta"
-            >Posted by JasonBai'Blog on May 31, 2025</span
+            >Posted by Jiawei Bai on June 24, 2025</span
           >
         </div>
       </div>
@@ -221,33 +228,209 @@
       <div
         class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container"
       >
-        <h1 id="work-out-and-sleep-record">Work Out and Sleep Record</h1>
+        <h1 id="遇见的一些常用-git-命令">遇见的一些常用 git 命令</h1>
 
-<h2 id="5-月">5 月</h2>
+<p>不知不觉进组已经快 2 个月了。虽然以前也在 github 上上传过代码并进行维护，但是很多时候都是只对当前仓库不断的 add commit push。</p>
 
-<p>5/25 周日 上午，爬坡一小时，坡度 13，速度 4.5
-卧推，大概是空杆 20 可以做组，30 稍微艰难一点</p>
+<p>而在实际工作中也遇到了很多有意思的 git 使用场景，今天就在这里做一个分享吧！</p>
 
-<p>5/26 周一 夜，爬坡一小时，坡度 14，速度 4.5
-腹部，做了几组撑杆抬腿，</p>
+<h2 id="情景一">情景一</h2>
 
-<p>5/27 周二 晨，爬坡半小时，坡度 8，速度 4，
-晚上又累又困，不行了就九点半就睡了，
-21:30 ～ 7:30</p>
+<p>“小白，这是我们的工作仓库，你把这个克隆到本地，记得用 PAT”</p>
 
-<p>5/28 周三 夜，爬坡 75 分钟，坡度 12，速度 4.5
-二头 空杆不知多重，加了 5 公斤和 10 公斤，10 能做几个，5 能做组（吗？）</p>
+<p>“好的，我研究下什么是 PAT”</p>
 
-<p>5/29 周四 夜
-00:00 ～ 7:40</p>
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 一般来说 我们这样克隆仓库</span>
+git clone https://github.com/example/repo.git
 
-<p>5/30 周五 夜，爬坡 60 分钟，坡度 13，速度 4.5-4.0
-跑步 15 分钟，速度 7.5，今天控心率控在 154 左右
-被说了，好像还是慢跑更减脂一点，那么 6 月开始跑步吧~</p>
+<span class="c"># 但是如果用PAT，就要在组织或者仓库中生成token，并通过token来拉取以及推送代码</span>
 
-<p>5/31 周六</p>
+<span class="c"># 安全方式：使用个人访问令牌(PAT)克隆私有仓库</span>
+<span class="c"># 注意：不要在命令行中硬编码PAT，推荐使用凭据助手或环境变量</span>
+<span class="c"># 方式一：临时使用环境变量</span>
+<span class="nb">export </span><span class="nv">GITHUB_TOKEN</span><span class="o">=</span>ghp_your_personal_access_token_here
+git clone <span class="s2">"https://</span><span class="k">${</span><span class="nv">GITHUB_TOKEN</span><span class="k">}</span><span class="s2">@github.com/example/private-repo.git"</span>
 
-<h2 id="6-月">6 月</h2>
+<span class="c"># 方式二：通过Git凭据助手存储PAT（推荐）</span>
+git clone https://github.com/example/private-repo.git
+<span class="c"># 首次输入用户名后，密码字段输入PAT，Git会自动存储</span>
+
+<span class="c"># 企业版GitHub或GitLab使用示例</span>
+git clone https://your_username:your_personal_access_token@gitlab.com/company/repo.git
+git clone https://your_username:your_personal_access_token@github.example.com/org/repo.git
+
+<span class="c"># 这个秘钥生成之后记得保存，看过一次就再也看不见了，除非重新生成</span>
+<span class="c"># 通过下面这个命令，我们可以看到当前仓库的远端地址</span>
+git remote <span class="nt">-v</span>
+</code></pre></div></div>
+
+<h2 id="情景二">情景二</h2>
+
+<p>“小白，创建个新的特性分支，然后提交个 PR 我看看”</p>
+
+<p>“好的，我先看看怎么创建新分支”</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 首先拉取仓库中的最新更新，防止有未更新到本地的代码</span>
+git checkout main
+git pull origin main
+
+<span class="c"># 查看是否落后于远端分支</span>
+git status
+
+<span class="c"># 查看所有分支，看看你想创建的那个特性分支是不是已经存在</span>
+git branch <span class="nt">-a</span>
+
+<span class="c"># 首先在当前仓库中，创建个新分支，注意命名规范</span>
+git checkout <span class="nt">-b</span> feature/new_branch
+
+<span class="c"># 经过开发后，暂存改动的文件，-u是只暂存将经跟踪的文件</span>
+git add <span class="nt">-u</span>
+
+<span class="c"># 提交改动</span>
+git commit <span class="nt">-m</span> <span class="s2">"new feature developed"</span>
+
+<span class="c"># 最后就可以推送到远端然后生成pull request啦, -u是 --set-upstream 的缩写</span>
+git push <span class="nt">-u</span> origin feature/new_branch
+
+</code></pre></div></div>
+
+<h2 id="情景三">情景三</h2>
+
+<p>“小白，（已经提交完了的时候）你别直接提交到这个分支，你新创建一个”</p>
+
+<p>“好的老板，我马上撤销提交。。”</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 先把本地的代码保存到新的分支中去,这个操作会把当前分支上所有未保存的修改都带到新的分支里去</span>
+git checkout <span class="nt">-b</span> feature/new_branch
+
+<span class="c"># 还是一样的，经过开发后，暂存改动的文件，-u是只暂存将经跟踪的文件</span>
+git add <span class="nt">-u</span>
+
+<span class="c"># 提交改动</span>
+git commit <span class="nt">-m</span> <span class="s2">"new feature developed"</span>
+
+<span class="c"># 最后就可以推送到远端然后生成pull request啦, -u是 --set-upstream 的缩写</span>
+git push <span class="nt">-u</span> origin feature/new_branch
+
+<span class="c"># 然后，要对刚刚提交过的branch 进行退回</span>
+<span class="c"># 一般有两种方式，假如只是回退几个commit，那么可以用revert</span>
+git revert <span class="o">[</span>提交哈希值1]
+
+<span class="c"># 上面哈希值的commit 不要了！</span>
+git revert <span class="o">[</span>提交哈希值2]
+git revert <span class="o">[</span>提交哈希值3]
+...
+git revert <span class="o">[</span>提交哈希值10]
+
+<span class="c"># 上面都不要了！</span>
+git push
+
+<span class="c"># 然后你就会看见分支里的提交记录：提交了1,2,3，...9,10，不要的提交1,2,3，...9,10，太长了！</span>
+
+
+<span class="c"># 第二种：什么！！我刚提交的10个commit都不要了，都要挪到新分支上去？？？</span>
+<span class="c"># 那就首先通过下面的命令查看提交记录</span>
+git log
+
+<span class="c"># 找到10个提交以前的那个commit的提交哈希值，这个哈希值后面的所有提交都不要了</span>
+git reset hard <span class="o">[</span>提交哈希值0]
+
+<span class="c"># 推回远端仓库进行同步</span>
+git push <span class="nt">--force</span> origin <span class="o">[</span>分支名]
+
+<span class="c"># 然后远端仓库会变成：最新提交是哈希值1（后面没有任何内容）。但是git会记录你 reset hard和push force过，所以最好确认过了再用，因为如果其中有别人的提交就会全部丢失。直接回滚到指定的节点。但会到很干净。建议备份到新分支后再操作。</span>
+</code></pre></div></div>
+
+<h2 id="情景四">情景四</h2>
+
+<p>“小白，把 A 分支里刚才的两个 commit，提交到 B 里去”</p>
+
+<p>“好的，我看看有什么提交”</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 先查看A分支的提交</span>
+git checkout branch-A
+
+<span class="c"># 创建个临时分支来进行提交，下面命令是根据本地a来创建了临时的cherry pick分支</span>
+git checkout <span class="nt">-b</span> temp/cherry-pick branch-A
+
+<span class="c"># 拉取最新修改</span>
+git pull  origin branch-A
+
+<span class="c"># 查看提交，用--oneline，查看更清晰</span>
+git log <span class="nt">--oneline</span>
+
+<span class="c"># 找到两个指定的commit以及其哈希值</span>
+<span class="c"># 切换到B分支，并拉取最新的B内容</span>
+git checkout branch-B
+git pull origin branch-B
+
+<span class="c"># 提交刚才看到的第一个commit</span>
+git cherry-pick <span class="o">[</span>提交哈希值1]
+
+<span class="c"># 处理冲突。。，</span>
+<span class="c"># 如果有冲突，看看有什么冲突</span>
+git status
+
+	<span class="c"># 选项一，处理后就要当做新的commit 来提交</span>
+	git commit <span class="nt">-m</span> <span class="s2">"提交了第一个commit，并且处理了一些冲突"</span>
+	<span class="c"># 选项二，这个commit 不要了，跳过当前提交继续</span>
+	git cherry-pick <span class="nt">--skip</span>
+	<span class="c"># 选项三，我也不知道怎么处理冲突，取消当前cherry-pick操作</span>
+	git cherry-pick <span class="nt">--abort</span>
+
+<span class="c"># 提交刚才看到的第二个commit</span>
+git cherry-pick <span class="o">[</span>提交哈希值2]
+
+<span class="c"># 继续处理冲突。。没冲突，那就直接结束</span>
+
+<span class="c"># 推送</span>
+git push origin branch-B
+</code></pre></div></div>
+
+<h2 id="情景五很少发生但是发生在了我头上">情景五（很少发生，但是发生在了我头上）</h2>
+
+<p>“老板，我改名字了”</p>
+
+<p>“什么，你改名字了？那把提交记录里的名字换成你的新名字吧”</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 先查看都有谁提交了什么commit</span>
+git log <span class="nt">--pretty</span><span class="o">=</span>format:<span class="s2">"%h %an %ae"</span>
+
+<span class="c"># 改变最近n次的提交人的姓名和邮箱</span>
+git rebase <span class="nt">-i</span> HEAD~n
+
+<span class="c"># 在弹出的编辑器中，将需要修改的提交前的pick改为edit</span>
+<span class="c"># 保存退出后，依次对每个标记为edit的提交执行：</span>
+git commit <span class="nt">--amend</span> <span class="nt">--author</span><span class="o">=</span><span class="s2">"正确用户名 &lt;正确邮箱@example.com&gt;"</span> <span class="nt">--no-edit</span>
+git rebase <span class="nt">--continue</span>  <span class="c"># 处理下一个提交</span>
+
+<span class="c"># 所有提交修改完成后推送到远程</span>
+git push <span class="nt">--force</span>
+</code></pre></div></div>
+
+<h2 id="情景六">情景六</h2>
+
+<p>vim 编辑器的一些常用命令</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 当进入vim编辑器时</span>
+a <span class="c"># 在光标后进入插入模式</span>
+i <span class="c"># 在光标处进入插入模式</span>
+A <span class="c"># 在行末进入插入模式</span>
+I <span class="c"># 在行首进入插入模式</span>
+esc <span class="c"># 退出编辑，返回命令模式</span>
+: <span class="c"># 从命令模式进入底行命令模式</span>
+	:wq <span class="c"># 保存并退出</span>
+	:q! <span class="c"># 强制退出，不保存</span>
+	:w  <span class="c"># 保存文件</span>
+	:w 新文件名 <span class="c"># 保存为新文件</span>
+	:x <span class="c"># 保存并退出，（等价于:wq）</span>
+	:q <span class="c"># 退出（只能在没修改文件时）</span>
+
+<span class="c"># 还有一些暂时用不上的命令</span>
+<span class="c"># 光标移动（命令模式）</span>
+<span class="c"># 文本编辑（命令模式）</span>
+<span class="c"># 搜索与替换</span>
+</code></pre></div></div>
 
 
         <hr style="visibility: hidden" />
@@ -256,28 +439,16 @@
           
           <li class="previous">
             <a
-              href="/2025/05/25/Java%E5%AD%A6%E4%B9%A0/"
+              href="/2025/05/31/WorkOutandSleepRecord/"
               data-toggle="tooltip"
               data-placement="top"
-              title="Java与Spring学习"
+              title="Work Out and Sleep Record"
             >
               Previous<br />
-              <span>Java与Spring学习</span>
+              <span>Work Out and Sleep Record</span>
             </a>
           </li>
            
-          <li class="next">
-            <a
-              href="/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/"
-              data-toggle="tooltip"
-              data-placement="top"
-              title="遇见的一些常用 git 命令"
-            >
-              Next<br />
-              <span>遇见的一些常用 git 命令</span>
-            </a>
-          </li>
-          
         </ul>
 
         
