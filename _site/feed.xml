@@ -3,10 +3,10 @@
   <channel>
     <title>JasonBai&apos;Blog</title>
     <description>一个小白的日常记录</description>
-    <link>https://jasonbai97.com/</link>
-    <atom:link href="https://jasonbai97.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 23 Jun 2025 23:20:54 +0900</pubDate>
-    <lastBuildDate>Mon, 23 Jun 2025 23:20:54 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sun, 29 Jun 2025 00:40:28 +0900</pubDate>
+    <lastBuildDate>Sun, 29 Jun 2025 00:40:28 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -216,8 +216,8 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 24 Jun 2025 08:16:47 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
+        <link>http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
         
         <category>DevOps</category>
         
@@ -229,6 +229,31 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
       <item>
         <title>Work Out and Sleep Record</title>
         <description>&lt;h1 id=&quot;work-out-and-sleep-record&quot;&gt;Work Out and Sleep Record&lt;/h1&gt;
+
+&lt;h2 id=&quot;健身速记&quot;&gt;健身速记&lt;/h2&gt;
+
+&lt;h3 id=&quot;新手训练笔记-1&quot;&gt;新手训练笔记 1&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;计划好训练
+具体的健身记录才会有反馈，才会有成长，随缘练才是止步不前的枷锁。&lt;/li&gt;
+  &lt;li&gt;训练前热身
+降低练前受伤风险，练后静态拉伸&lt;/li&gt;
+  &lt;li&gt;目标要切实际
+健康饮食， 一天一点，长期坚持
+每周 2 斤，每个月 10 斤（而不是第一周强练七天-&amp;gt;第二周身心疲惫-&amp;gt;第三周躺平摆烂-&amp;gt;第四周卸载健身 app）&lt;/li&gt;
+  &lt;li&gt;记得练腿
+一周至少练一次腿（虽然已经在跑步热身了）&lt;/li&gt;
+  &lt;li&gt;训练完记得恢复
+健身房练肌肉，床上长肌肉
+每周三到五次&lt;/li&gt;
+  &lt;li&gt;坚持（据说百分之 93 的人半途而废，所以坚持才是最大的难点）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;新手训练笔记-2&quot;&gt;新手训练笔记 2&lt;/h3&gt;
+
+&lt;p&gt;所以健身的
+胸-&amp;gt;背-&amp;gt;肩-&amp;gt;手臂-&amp;gt;腰腹&lt;/p&gt;
 
 &lt;h2 id=&quot;5-月&quot;&gt;5 月&lt;/h2&gt;
 
@@ -255,10 +280,16 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;p&gt;5/31 周六&lt;/p&gt;
 
 &lt;h2 id=&quot;6-月&quot;&gt;6 月&lt;/h2&gt;
+
+&lt;p&gt;由于身体原因，跳过了 6 月训练。。&lt;/p&gt;
+
+&lt;p&gt;6 月 29 日 复健训练&lt;/p&gt;
+
+&lt;h2 id=&quot;7-月&quot;&gt;7 月&lt;/h2&gt;
 </description>
         <pubDate>Sat, 31 May 2025 05:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</guid>
+        <link>http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</guid>
         
         <category>Life</category>
         
@@ -1188,8 +1219,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 25 May 2025 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
+        <link>http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
         
         <category>Java</category>
         
@@ -1237,8 +1268,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;那就在这里许个愿吧。&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 May 2025 03:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
+        <link>http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
         
         <category>Life</category>
         
@@ -1290,8 +1321,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;还有很多想说的想记下来的，这里就不赘述了，有时间开另一篇文章再详细记录吧。晚安。&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Jun 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/06/10/Life/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/06/10/Life/</guid>
+        <link>http://localhost:4000/2024/06/10/Life/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/06/10/Life/</guid>
         
         <category>Life</category>
         
@@ -2583,8 +2614,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;h2 id=&quot;第二部分结束&quot;&gt;第二部分结束&lt;/h2&gt;
 </description>
         <pubDate>Mon, 20 May 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/05/20/Leetcode/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/05/20/Leetcode/</guid>
+        <link>http://localhost:4000/2024/05/20/Leetcode/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/20/Leetcode/</guid>
         
         <category>Leetcode</category>
         
@@ -2805,8 +2836,8 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;h3 id=&quot;harbor&quot;&gt;Harbor&lt;/h3&gt;
 </description>
         <pubDate>Fri, 03 May 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/05/03/CI_in_DevOps/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/05/03/CI_in_DevOps/</guid>
+        <link>http://localhost:4000/2024/05/03/CI_in_DevOps/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/03/CI_in_DevOps/</guid>
         
         <category>DevOps</category>
         
