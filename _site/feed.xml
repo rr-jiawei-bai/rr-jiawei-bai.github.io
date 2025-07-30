@@ -5,9 +5,240 @@
     <description>一个小白的日常记录</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sun, 29 Jun 2025 00:40:28 +0900</pubDate>
-    <lastBuildDate>Sun, 29 Jun 2025 00:40:28 +0900</lastBuildDate>
+    <pubDate>Thu, 31 Jul 2025 00:50:24 +0900</pubDate>
+    <lastBuildDate>Thu, 31 Jul 2025 00:50:24 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
+    
+      <item>
+        <title>2025年7月,怎么配电脑</title>
+        <description>&lt;h1 id=&quot;2025-年-7-月怎么配电脑&quot;&gt;2025 年 7 月，怎么配电脑&lt;/h1&gt;
+
+&lt;p&gt;太久没有追硬件了，今天打算研究一下。&lt;/p&gt;
+
+&lt;p&gt;不知是 PC 好还是笔记本好。虽然性能上来说，PC 要强于笔记本，但是便携性笔记本还是没得说的，而且以我的需求，笔记本是完全够的。但是鉴于我已经有了 27 寸 4k160HzMiniLED 显示器了，所以买个微型低配的好像也不是不可以，比较一下价格吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;pc&quot;&gt;PC&lt;/h2&gt;
+
+&lt;p&gt;看看 PC 现在流行的，依然是推荐 i3/5/7，N 卡 40 系列的 4060/70/70ti，50 系列的 5060/60/70ti，32GB 内存&lt;/p&gt;
+
+&lt;p&gt;虽然系列都一样，但是和应该以前一样，还是得看品牌吧。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;处理器&lt;/p&gt;
+
+    &lt;p&gt;因特尔：忘记听谁说 i3/5/7/9 已经&lt;del&gt;淘汰&lt;/del&gt;了，但好像依然还是主流&lt;/p&gt;
+
+    &lt;p&gt;AMD：？这个是需要调查的部分。看了下 AMD 家除了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;显卡&lt;/p&gt;
+
+    &lt;p&gt;N 卡：除了最有名的 40/50 系列外，好像也没什么印象了&lt;/p&gt;
+
+    &lt;p&gt;A 卡：最近又崛起了？&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;主板&lt;/p&gt;
+
+    &lt;p&gt;没什么说的，什么处理器配什么&lt;del&gt;主板&lt;/del&gt;菜吧&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;内存&lt;/p&gt;
+
+    &lt;p&gt;16G 或者 32G 吧&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;硬盘&lt;/p&gt;
+
+    &lt;p&gt;1T 固态也已经很便宜了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;电源&lt;/p&gt;
+
+    &lt;p&gt;没什么说的，一直都是整个机箱里最便宜的部件&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;机箱&lt;/p&gt;
+
+    &lt;p&gt;哦对不起，这个才是最便宜的。但是小玩意会比较多，比如风扇，水冷，灯之类的，都要算上&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;待选清单&lt;/th&gt;
+      &lt;th&gt;型号&lt;/th&gt;
+      &lt;th&gt;国内价格（主要是京东）&lt;/th&gt;
+      &lt;th&gt;日本价格&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;处理器&lt;/td&gt;
+      &lt;td&gt;amd R9-9950/R7-9800x3d&lt;/td&gt;
+      &lt;td&gt;3699&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;intel ultra9-285k&lt;/td&gt;
+      &lt;td&gt;4399&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;intel i9-14900k&lt;/td&gt;
+      &lt;td&gt;3399&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;amd 7800 x3d&lt;/td&gt;
+      &lt;td&gt;2999&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;intel i7-14700kf&lt;/td&gt;
+      &lt;td&gt;2349&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;intel i5-14600kf&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;1399&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;AMD 5800&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;显卡&lt;/td&gt;
+      &lt;td&gt;msi 5070 12g&lt;/td&gt;
+      &lt;td&gt;4999&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;Msi 5060ti 12g&lt;/td&gt;
+      &lt;td&gt;3599&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;7700xt 12g&lt;/td&gt;
+      &lt;td&gt;3149&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;ASUS 5060 12g&lt;/td&gt;
+      &lt;td&gt;2999&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;3070&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;主板&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;1500&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;内存&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Kingston 16GB x 2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;895&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;硬盘&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Sumsung 990Pro 1TB&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;785&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;电源&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;长城 800w&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;400&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;散热&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;机箱&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;合计&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;6K&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;预算&quot;&gt;预算&lt;/h1&gt;
+
+&lt;p&gt;第一波调查完处理器和显卡，预算看完感觉。。。我真的用得到这个配置吗（怀疑&lt;/p&gt;
+
+&lt;p&gt;首先定义需求：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;游戏：战地，赛博朋克，黑神话，dota，lol，2k&lt;/li&gt;
+  &lt;li&gt;日常：存存照片，剪剪视频&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;综合来看，AMD 更有性价比一些&lt;/p&gt;
+
+&lt;h1 id=&quot;天梯图&quot;&gt;天梯图&lt;/h1&gt;
+
+&lt;h2 id=&quot;来个-cpu-天梯图&quot;&gt;来个 CPU 天梯图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://picx.zhimg.com/v2-418453874dad86e3ec4615e5bce4c265_1440w.webp?consumer=ZHI_MENG&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;再来个显卡天梯图&quot;&gt;再来个显卡天梯图&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-2dc9d9d656bb9a221a5f975de8022363_1440w.webp?consumer=ZHI_MENG&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;笔记本-cpu-性能排行榜&quot;&gt;笔记本 CPU 性能排行榜&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/v2-4afa1fecae33ffb4db9c53223f907848_1440w.webp?consumer=ZHI_MENG&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Thu, 31 Jul 2025 09:47:03 +0900</pubDate>
+        <link>http://localhost:4000/2025/07/31/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/07/31/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</guid>
+        
+        <category>Life</category>
+        
+        
+      </item>
     
       <item>
         <title>遇见的一些常用 git 命令</title>
