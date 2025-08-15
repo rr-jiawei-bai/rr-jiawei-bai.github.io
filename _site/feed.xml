@@ -3,15 +3,15 @@
   <channel>
     <title>JasonBai&apos;Blog</title>
     <description>一个小白的日常记录</description>
-    <link>http://localhost:4000/</link>
-    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 31 Jul 2025 00:50:24 +0900</pubDate>
-    <lastBuildDate>Thu, 31 Jul 2025 00:50:24 +0900</lastBuildDate>
+    <link>https://jasonbai97.com/</link>
+    <atom:link href="https://jasonbai97.com/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Sat, 16 Aug 2025 01:17:03 +0900</pubDate>
+    <lastBuildDate>Sat, 16 Aug 2025 01:17:03 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
-        <title>2025年7月,怎么配电脑</title>
-        <description>&lt;h1 id=&quot;2025-年-7-月怎么配电脑&quot;&gt;2025 年 7 月，怎么配电脑&lt;/h1&gt;
+        <title>2025年8月,怎么配电脑</title>
+        <description>&lt;h1 id=&quot;2025-年-8-月怎么配电脑&quot;&gt;2025 年 8 月，怎么配电脑&lt;/h1&gt;
 
 &lt;p&gt;太久没有追硬件了，今天打算研究一下。&lt;/p&gt;
 
@@ -76,7 +76,7 @@
   &lt;/thead&gt;
   &lt;tbody&gt;
     &lt;tr&gt;
-      &lt;td&gt;处理器&lt;/td&gt;
+      &lt;td&gt;板 U 套装&lt;/td&gt;
       &lt;td&gt;amd R9-9950/R7-9800x3d&lt;/td&gt;
       &lt;td&gt;3699&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
@@ -107,25 +107,55 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;intel i5-14600kf&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;1399&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;AMD 5800&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;7800X + b650m&lt;/td&gt;
+      &lt;td&gt;3400&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;9700X + b650m&lt;/td&gt;
+      &lt;td&gt;2800&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;I5-14600KF + b760m&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2400&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;9600X + b650m&lt;/td&gt;
+      &lt;td&gt;2250&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;7500F + b650me&lt;/td&gt;
+      &lt;td&gt;1800&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;I5-13490f + b760m&lt;/td&gt;
+      &lt;td&gt;1500&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;散热&lt;/td&gt;
+      &lt;td&gt;？&lt;/td&gt;
+      &lt;td&gt;？&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;显卡&lt;/td&gt;
-      &lt;td&gt;msi 5070 12g&lt;/td&gt;
+      &lt;td&gt;MSI 5070 12g&lt;/td&gt;
       &lt;td&gt;4999&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
@@ -149,20 +179,20 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;3070&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;9060xt 16g&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2999&lt;/strong&gt;（选择 1）&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;9060xt 8g&lt;/td&gt;
+      &lt;td&gt;2499&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;主板&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;1500&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;5060 8g&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2499&lt;/strong&gt;（选择 2）&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -179,26 +209,32 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;电源&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;长城 800w&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;400&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;长城 TF850w&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;散热&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;风扇&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;机箱&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Jonsbo 松果 D31 黑色 水冷&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;250（+运费 230）&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;显示器&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;泰坦军团 P275MV Plus&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;2000&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;合计&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;6K&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -231,9 +267,9 @@
 
 &lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/v2-4afa1fecae33ffb4db9c53223f907848_1440w.webp?consumer=ZHI_MENG&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 </description>
-        <pubDate>Thu, 31 Jul 2025 09:47:03 +0900</pubDate>
-        <link>http://localhost:4000/2025/07/31/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/07/31/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</guid>
+        <pubDate>Sat, 16 Aug 2025 10:16:03 +0900</pubDate>
+        <link>https://jasonbai97.com/2025/08/16/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/08/16/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</guid>
         
         <category>Life</category>
         
@@ -447,8 +483,8 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 24 Jun 2025 08:16:47 +0900</pubDate>
-        <link>http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
+        <link>https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
         
         <category>DevOps</category>
         
@@ -519,8 +555,8 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;h2 id=&quot;7-月&quot;&gt;7 月&lt;/h2&gt;
 </description>
         <pubDate>Sat, 31 May 2025 05:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</guid>
+        <link>https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</guid>
         
         <category>Life</category>
         
@@ -1450,8 +1486,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 25 May 2025 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
+        <link>https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
         
         <category>Java</category>
         
@@ -1499,8 +1535,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;那就在这里许个愿吧。&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 May 2025 03:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
-        <guid isPermaLink="true">http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
+        <link>https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
         
         <category>Life</category>
         
@@ -1552,8 +1588,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;还有很多想说的想记下来的，这里就不赘述了，有时间开另一篇文章再详细记录吧。晚安。&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Jun 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/06/10/Life/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/06/10/Life/</guid>
+        <link>https://jasonbai97.com/2024/06/10/Life/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/06/10/Life/</guid>
         
         <category>Life</category>
         
@@ -2845,8 +2881,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;h2 id=&quot;第二部分结束&quot;&gt;第二部分结束&lt;/h2&gt;
 </description>
         <pubDate>Mon, 20 May 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/05/20/Leetcode/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/20/Leetcode/</guid>
+        <link>https://jasonbai97.com/2024/05/20/Leetcode/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/05/20/Leetcode/</guid>
         
         <category>Leetcode</category>
         
@@ -3067,8 +3103,8 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;h3 id=&quot;harbor&quot;&gt;Harbor&lt;/h3&gt;
 </description>
         <pubDate>Fri, 03 May 2024 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/2024/05/03/CI_in_DevOps/</link>
-        <guid isPermaLink="true">http://localhost:4000/2024/05/03/CI_in_DevOps/</guid>
+        <link>https://jasonbai97.com/2024/05/03/CI_in_DevOps/</link>
+        <guid isPermaLink="true">https://jasonbai97.com/2024/05/03/CI_in_DevOps/</guid>
         
         <category>DevOps</category>
         
