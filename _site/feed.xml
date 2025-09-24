@@ -3,10 +3,10 @@
   <channel>
     <title>JasonBai&apos;Blog</title>
     <description>一个小白的日常记录</description>
-    <link>https://jasonbai97.com/</link>
-    <atom:link href="https://jasonbai97.com/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 16 Aug 2025 01:17:03 +0900</pubDate>
-    <lastBuildDate>Sat, 16 Aug 2025 01:17:03 +0900</lastBuildDate>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Wed, 24 Sep 2025 20:43:41 +0900</pubDate>
+    <lastBuildDate>Wed, 24 Sep 2025 20:43:41 +0900</lastBuildDate>
     <generator>Jekyll v4.4.1</generator>
     
       <item>
@@ -16,6 +16,36 @@
 &lt;p&gt;太久没有追硬件了，今天打算研究一下。&lt;/p&gt;
 
 &lt;p&gt;不知是 PC 好还是笔记本好。虽然性能上来说，PC 要强于笔记本，但是便携性笔记本还是没得说的，而且以我的需求，笔记本是完全够的。但是鉴于我已经有了 27 寸 4k160HzMiniLED 显示器了，所以买个微型低配的好像也不是不可以，比较一下价格吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;9-月-24-日更新&quot;&gt;9 月 24 日更新：&lt;/h2&gt;
+
+&lt;p&gt;最近已经陆陆续续把电脑组完了，10 月 1 日就可以安装 WiFi 了，即将可以畅玩。&lt;/p&gt;
+
+&lt;h4 id=&quot;来更新一下笔记&quot;&gt;来更新一下笔记&lt;/h4&gt;
+
+&lt;p&gt;这次实际花了 8k 左右来组了一台 pc，虽然机箱电源和散热都是二手的，但都没有任何问题（你完全可以相信曾宝），可能省了大概 1500 左右？加上之前为了玩 PS5 买的 4k 高刷显示器，总价格应该要 1.15w 左右了。&lt;/p&gt;
+
+&lt;p&gt;下面讲一下具体配置思路。&lt;/p&gt;
+
+&lt;p&gt;首先因为我已入手了一台 4k160hz 高刷显示器，本着不想浪费这台显示器性能的目的，我先选择了显卡。大概就是 5060，5060ti 和 5070（再贵真买不起了）这几张。A 卡的话其实也考虑过，大概是 9060xt,9070xt 这个级别了。&lt;/p&gt;
+
+&lt;p&gt;但是恰好有一天，上班摸鱼时，打开了价格.com 查了下显卡价格，发现日版 5070 已经降到了 4200（国内便宜的还在 4600 左右），再加上我们的业务还能反 2.5% 的积分再减 100 块，于是马上下单。&lt;/p&gt;
+
+&lt;p&gt;而 CPU 其实我没得选，水冷只支持 1700 针脚的 Intel，所以只能买 i5 或者 i7。考虑到最近的 13 代 14 代 i5 全是雷电小子，一睿频工作电压就会到 1.3v 以上长时间运行导致蓝屏死机的问题，果断选择了 12 代，本来想买 12 代的 i5-12600kf，但是刷着刷着一看 i7-12700kf 居然只贵 15 块钱，开玩笑，我是花不起这 15 块钱的人吗！果断升 i7，再配上微星 B760M-A 的板子，套装不到 2000 块。&lt;/p&gt;
+
+&lt;p&gt;内存硬盘我是选择了光威的 RGB 内存（光污染日后必有大用哈哈哈）＋铠侠 SE10 2TB 的硬盘（也是用了淘宝优惠券），也算有性价比。&lt;/p&gt;
+
+&lt;p&gt;最后买了个硅脂就装机了，11 年前也组装过一台电脑，所以也算是熟练了，轻车熟路，一次点亮。&lt;/p&gt;
+
+&lt;p&gt;就剩 WIFI 了，日本的效率是真的低，居然要等三个礼拜才能安装宽带，无语 😒。&lt;/p&gt;
+
+&lt;h4 id=&quot;这台电脑大概能做到&quot;&gt;这台电脑大概能做到&lt;/h4&gt;
+
+&lt;p&gt;烤机跑甜甜圈 4k15 分钟平均是 106 帧，所以 4k 单机游戏的话大概能到 100 帧左右？网游因为还没有网络，也没实测过。&lt;/p&gt;
+
+&lt;p&gt;生产力的话，i7 的处理器，6 大核，4 小核，20 线程应该基本的剪视频 p 图之类的应该是问题不大。&lt;/p&gt;
+
+&lt;p&gt;还是不要给自己没有需求创造需求比较好，对我来说这台电脑是完全够用的。&lt;/p&gt;
 
 &lt;h2 id=&quot;pc&quot;&gt;PC&lt;/h2&gt;
 
@@ -27,16 +57,18 @@
   &lt;li&gt;
     &lt;p&gt;处理器&lt;/p&gt;
 
-    &lt;p&gt;因特尔：忘记听谁说 i3/5/7/9 已经&lt;del&gt;淘汰&lt;/del&gt;了，但好像依然还是主流&lt;/p&gt;
+    &lt;p&gt;因特尔：&lt;del&gt;忘记听谁说 i3/5/7/9 已经淘汰了，但好像依然还是主流&lt;/del&gt;&lt;/p&gt;
 
-    &lt;p&gt;AMD：？这个是需要调查的部分。看了下 AMD 家除了&lt;/p&gt;
+    &lt;p&gt;平民玩家来说，12 代 13 代 14 代 i5 还是非常有性价比的，但是因为 13 代 14 代爆雷比较多，所以还是推荐 12 代或者直接上 AMD yes！&lt;/p&gt;
+
+    &lt;p&gt;AMD：AMD 的 U，好像推荐的都是 9600,9700，因为我的水冷没法改了，所以没有细致调查。9 月末应该是降价了很多，很多主播都在推 AMD 的 U。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;显卡&lt;/p&gt;
 
-    &lt;p&gt;N 卡：除了最有名的 40/50 系列外，好像也没什么印象了&lt;/p&gt;
+    &lt;p&gt;N 卡：我的理解是 5060 玩 1k，5060ti 玩 2k，5070 爽玩 2k，5070ti 玩 4k，5080 爽玩 4k&lt;/p&gt;
 
-    &lt;p&gt;A 卡：最近又崛起了？&lt;/p&gt;
+    &lt;p&gt;A 卡：只看了 9060,9070，虽然跑分也比竞品 5060 高，但最后还是放弃了&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;主板&lt;/p&gt;
@@ -46,22 +78,29 @@
   &lt;li&gt;
     &lt;p&gt;内存&lt;/p&gt;
 
-    &lt;p&gt;16G 或者 32G 吧&lt;/p&gt;
+    &lt;p&gt;组完机后发现，待机就 8G 了，所以推荐 32，反正越高越好吧&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;硬盘&lt;/p&gt;
 
-    &lt;p&gt;1T 固态也已经很便宜了&lt;/p&gt;
+    &lt;p&gt;1T 固态也已经很便宜了，但是一个游戏就 100 多 G 了，所以就买了 2T&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;电源&lt;/p&gt;
 
-    &lt;p&gt;没什么说的，一直都是整个机箱里最便宜的部件&lt;/p&gt;
+    &lt;p&gt;&lt;del&gt;没什么说的，一直都是整个机箱里最便宜的部件&lt;/del&gt;&lt;/p&gt;
+
+    &lt;p&gt;便宜个 P，才发现 850w 已经快 800 块钱了&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;散热&lt;/p&gt;
+
+    &lt;p&gt;大概也要三四百大洋了，如果想要酷炫带灯光的会更贵。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;机箱&lt;/p&gt;
 
-    &lt;p&gt;哦对不起，这个才是最便宜的。但是小玩意会比较多，比如风扇，水冷，灯之类的，都要算上&lt;/p&gt;
+    &lt;p&gt;哦对不起，这个才是最便宜的。但是小玩意会比较多，比如 RGB 风扇，海景房之类的要求，都要算上&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 
@@ -95,8 +134,14 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;amd 7800 x3d&lt;/td&gt;
-      &lt;td&gt;2999&lt;/td&gt;
+      &lt;td&gt;I5-13490f + b760m&lt;/td&gt;
+      &lt;td&gt;1500&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;intel i5-14600KF + b760m&lt;/td&gt;
+      &lt;td&gt;2400&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -106,57 +151,51 @@
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;7800X + b650m&lt;/td&gt;
-      &lt;td&gt;3400&lt;/td&gt;
+      &lt;td&gt;最后选了这个&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;intel i7-12700kf + b760m&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;1989&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;9700X + b650m&lt;/td&gt;
-      &lt;td&gt;2800&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;amd 7800 x3d&lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;2999&lt;/del&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;I5-14600KF + b760m&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;2400&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;7800X + b650m&lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;3400&lt;/del&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;9600X + b650m&lt;/td&gt;
-      &lt;td&gt;2250&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;9700X + b650m&lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;2800&lt;/del&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;7500F + b650me&lt;/td&gt;
-      &lt;td&gt;1800&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;9600X + b650m&lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;2250&lt;/del&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;I5-13490f + b760m&lt;/td&gt;
-      &lt;td&gt;1500&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;7500F + b650me&lt;/del&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;del&gt;1800&lt;/del&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;散热&lt;/td&gt;
-      &lt;td&gt;？&lt;/td&gt;
-      &lt;td&gt;？&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;利民 Frozen magic 360&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt;显卡&lt;/td&gt;
-      &lt;td&gt;MSI 5070 12g&lt;/td&gt;
-      &lt;td&gt;4999&lt;/td&gt;
+      &lt;td&gt;显卡选了这个&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;ASUS PRIME 5070 12g&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;4200&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -167,20 +206,26 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;7700xt 12g&lt;/td&gt;
-      &lt;td&gt;3149&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
       &lt;td&gt;ASUS 5060 12g&lt;/td&gt;
       &lt;td&gt;2999&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;9060xt 16g&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;2999&lt;/strong&gt;（选择 1）&lt;/td&gt;
+      &lt;td&gt;5060 8g&lt;/td&gt;
+      &lt;td&gt;2499&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;7700xt 12g&lt;/td&gt;
+      &lt;td&gt;3149&lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;9060xt 16g&lt;/td&gt;
+      &lt;td&gt;2999&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -190,21 +235,15 @@
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;5060 8g&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;2499&lt;/strong&gt;（选择 2）&lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
       &lt;td&gt;内存&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Kingston 16GB x 2&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;895&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Gloway 3600 C16 RGB 16GB x 2&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;589&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;硬盘&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;Sumsung 990Pro 1TB&lt;/strong&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;785&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;Kioxia SE10 2TB&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;939&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
     &lt;tr&gt;
@@ -215,7 +254,7 @@
     &lt;/tr&gt;
     &lt;tr&gt;
       &lt;td&gt;风扇&lt;/td&gt;
-      &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;利民风扇 x5&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt;&lt;strong&gt;*&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
@@ -234,7 +273,7 @@
     &lt;tr&gt;
       &lt;td&gt;合计&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt;&lt;strong&gt;1w&lt;/strong&gt;&lt;/td&gt;
       &lt;td&gt; &lt;/td&gt;
     &lt;/tr&gt;
   &lt;/tbody&gt;
@@ -251,8 +290,6 @@
   &lt;li&gt;日常：存存照片，剪剪视频&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;综合来看，AMD 更有性价比一些&lt;/p&gt;
-
 &lt;h1 id=&quot;天梯图&quot;&gt;天梯图&lt;/h1&gt;
 
 &lt;h2 id=&quot;来个-cpu-天梯图&quot;&gt;来个 CPU 天梯图&lt;/h2&gt;
@@ -268,8 +305,8 @@
 &lt;p&gt;&lt;img src=&quot;https://pic1.zhimg.com/v2-4afa1fecae33ffb4db9c53223f907848_1440w.webp?consumer=ZHI_MENG&quot; alt=&quot;img&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Sat, 16 Aug 2025 10:16:03 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/08/16/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/08/16/2025%E5%B9%B47%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</guid>
+        <link>http://localhost:4000/2025/08/16/2025%E5%B9%B48%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/08/16/2025%E5%B9%B48%E6%9C%88%E6%80%8E%E4%B9%88%E9%85%8D%E7%94%B5%E8%84%91/</guid>
         
         <category>Life</category>
         
@@ -483,8 +520,8 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Tue, 24 Jun 2025 08:16:47 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
+        <link>http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/06/24/%E9%81%87%E8%A7%81%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B8%B8%E7%94%A8-git-%E5%91%BD%E4%BB%A4/</guid>
         
         <category>DevOps</category>
         
@@ -555,8 +592,8 @@ esc &lt;span class=&quot;c&quot;&gt;# 退出编辑，返回命令模式&lt;/span
 &lt;h2 id=&quot;7-月&quot;&gt;7 月&lt;/h2&gt;
 </description>
         <pubDate>Sat, 31 May 2025 05:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/31/WorkOutandSleepRecord/</guid>
+        <link>http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/31/WorkOutandSleepRecord/</guid>
         
         <category>Life</category>
         
@@ -1486,8 +1523,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 </description>
         <pubDate>Sun, 25 May 2025 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
+        <link>http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/25/Java%E5%AD%A6%E4%B9%A0/</guid>
         
         <category>Java</category>
         
@@ -1535,8 +1572,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;那就在这里许个愿吧。&lt;/p&gt;
 </description>
         <pubDate>Sat, 24 May 2025 03:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
+        <link>http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</link>
+        <guid isPermaLink="true">http://localhost:4000/2025/05/24/%E5%B7%A5%E4%BD%9C%E6%9C%89%E6%84%9F/</guid>
         
         <category>Life</category>
         
@@ -1588,8 +1625,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;p&gt;还有很多想说的想记下来的，这里就不赘述了，有时间开另一篇文章再详细记录吧。晚安。&lt;/p&gt;
 </description>
         <pubDate>Mon, 10 Jun 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/06/10/Life/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/06/10/Life/</guid>
+        <link>http://localhost:4000/2024/06/10/Life/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/06/10/Life/</guid>
         
         <category>Life</category>
         
@@ -2881,8 +2918,8 @@ Objective instanceof Student; true&lt;/p&gt;
 &lt;h2 id=&quot;第二部分结束&quot;&gt;第二部分结束&lt;/h2&gt;
 </description>
         <pubDate>Mon, 20 May 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/05/20/Leetcode/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/05/20/Leetcode/</guid>
+        <link>http://localhost:4000/2024/05/20/Leetcode/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/20/Leetcode/</guid>
         
         <category>Leetcode</category>
         
@@ -3103,8 +3140,8 @@ docker logs &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt; jenkins &lt;span cl
 &lt;h3 id=&quot;harbor&quot;&gt;Harbor&lt;/h3&gt;
 </description>
         <pubDate>Fri, 03 May 2024 00:00:00 +0900</pubDate>
-        <link>https://jasonbai97.com/2024/05/03/CI_in_DevOps/</link>
-        <guid isPermaLink="true">https://jasonbai97.com/2024/05/03/CI_in_DevOps/</guid>
+        <link>http://localhost:4000/2024/05/03/CI_in_DevOps/</link>
+        <guid isPermaLink="true">http://localhost:4000/2024/05/03/CI_in_DevOps/</guid>
         
         <category>DevOps</category>
         
